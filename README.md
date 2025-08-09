@@ -1,2 +1,2 @@
 # My Home Immobiliare
-This is a simple real estate site.
+This is a real estate site.
