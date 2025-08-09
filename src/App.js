@@ -29,7 +29,7 @@ export default function App() {
 
 /* ---------------- Hero con immagine + ricerca ---------------- */
 function Hero({ tipo, setTipo, categoria, setCategoria, citta, setCitta, onSearch }) {
-  // Sostituisci con la tua immagine caricata in /public/hero.jpg
+  // Usa l’immagine che carichi in /public/hero.jpg
   const bg = "/hero.jpg";
 
   return (
