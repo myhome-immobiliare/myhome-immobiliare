@@ -45,7 +45,7 @@ function Hero({ tipo, setTipo, categoria, setCategoria, citta, setCitta, onSearc
     >
       <div style={{ width: "100%", maxWidth: 1100 }}>
         <h1 style={{ fontSize: "clamp(28px, 6vw, 56px)", margin: 0, fontWeight: 700 }}>
-          Oggi casa una storia. <span style={{ whiteSpace: "nowrap" }}>La tua!</span>
+          Ogni casa una storia. <span style={{ whiteSpace: "nowrap" }}>La tua!</span>
         </h1>
         <p style={{ opacity: 0.9, marginTop: 8 }}>
           Trova subito l’immobile giusto tra vendite e affitti.
