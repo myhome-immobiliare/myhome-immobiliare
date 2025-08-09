@@ -22,12 +22,15 @@ export default function App() {
         setCitta={setCitta}
         onSearch={onSearch}
       />
+      <AnnunciInEvidenza />
     </div>
   );
 }
 
+/* ---------------- Hero con immagine + ricerca ---------------- */
 function Hero({ tipo, setTipo, categoria, setCategoria, citta, setCitta, onSearch }) {
-  const bg = "/hero.jpg"; // <- usa l'immagine che hai caricato in /public
+  // Sostituisci con la tua immagine caricata in /public/hero.jpg
+  const bg = "/hero.jpg";
 
   return (
     <section
@@ -63,11 +66,13 @@ function Hero({ tipo, setTipo, categoria, setCategoria, citta, setCitta, onSearc
             gap: 8,
           }}
         >
+          {/* Tipo */}
           <select value={tipo} onChange={(e) => setTipo(e.target.value)} style={selectStyle} aria-label="Tipo">
             <option value="vendite">Vendite</option>
             <option value="affitti">Affitti</option>
           </select>
 
+          {/* Categoria */}
           <select value={categoria} onChange={(e) => setCategoria(e.target.value)} style={selectStyle} aria-label="Categoria">
             <option value="">Qualsiasi categoria</option>
             <option value="appartamento">Appartamento</option>
@@ -76,14 +81,18 @@ function Hero({ tipo, setTipo, categoria, setCategoria, citta, setCitta, onSearc
             <option value="commerciale">Commerciale</option>
           </select>
 
+          {/* Città */}
           <select value={citta} onChange={(e) => setCitta(e.target.value)} style={selectStyle} aria-label="Città">
             <option value="">Tutte le città</option>
             <option value="Milano">Milano</option>
             <option value="Roma">Roma</option>
             <option value="Torino">Torino</option>
             <option value="Bologna">Bologna</option>
+            <option value="Napoli">Napoli</option>
+            <option value="Firenze">Firenze</option>
           </select>
 
+          {/* Bottone Cerca */}
           <button type="submit" style={searchBtnStyle}>Cerca</button>
         </form>
       </div>
@@ -91,6 +100,92 @@ function Hero({ tipo, setTipo, categoria, setCategoria, citta, setCitta, onSearc
   );
 }
 
+/* ---------------- Sezione Annunci in evidenza (6 card) ---------------- */
+function AnnunciInEvidenza() {
+  const annunci = [
+    {
+      id: 1,
+      titolo: "Appartamento moderno in centro",
+      prezzo: "€250.000",
+      citta: "Milano",
+      img: "https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      id: 2,
+      titolo: "Villa con piscina e giardino",
+      prezzo: "€750.000",
+      citta: "Roma",
+      img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      id: 3,
+      titolo: "Attico panoramico",
+      prezzo: "€420.000",
+      citta: "Torino",
+      img: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      id: 4,
+      titolo: "Bilocale ristrutturato",
+      prezzo: "€189.000",
+      citta: "Bologna",
+      img: "https://images.unsplash.com/photo-1505691723518-36a5ac3b2a59?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      id: 5,
+      titolo: "Trilocale luminoso",
+      prezzo: "€315.000",
+      citta: "Firenze",
+      img: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      id: 6,
+      titolo: "Loft industriale",
+      prezzo: "€390.000",
+      citta: "Napoli",
+      img: "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop",
+    },
+  ];
+
+  return (
+    <section style={{ padding: "40px 20px", maxWidth: 1100, margin: "0 auto" }}>
+      <h2 style={{ fontSize: "clamp(22px, 4vw, 32px)", marginBottom: 20 }}>
+        Annunci in evidenza
+      </h2>
+      <div style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+        gap: 20
+      }}>
+        {annunci.map((annuncio) => (
+          <div key={annuncio.id} style={{
+            background: "#fff",
+            borderRadius: 12,
+            overflow: "hidden",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
+          }}>
+            <img
+              src={annuncio.img}
+              alt={annuncio.titolo}
+              style={{ width: "100%", height: 200, objectFit: "cover" }}
+              loading="lazy"
+            />
+            <div style={{ padding: 16 }}>
+              <h3 style={{ margin: "0 0 8px", fontSize: 18 }}>{annuncio.titolo}</h3>
+              <p style={{ margin: "0 0 4px", fontWeight: "bold", color: "#1f2937" }}>{annuncio.prezzo}</p>
+              <p style={{ margin: 0, color: "#555" }}>{annuncio.citta}</p>
+              <div style={{ marginTop: 10 }}>
+                <a href="/annunci" style={cardBtnStyle}>Vedi dettagli</a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Stili inline riutilizzabili ---------------- */
 const selectStyle = {
   appearance: "none",
   WebkitAppearance: "none",
@@ -110,5 +205,16 @@ const searchBtnStyle = {
   padding: "12px 22px",
   fontSize: 16,
   cursor: "pointer",
+  fontWeight: 600,
+};
+
+const cardBtnStyle = {
+  display: "inline-block",
+  background: "#111827",
+  color: "white",
+  textDecoration: "none",
+  padding: "10px 14px",
+  borderRadius: 10,
+  fontSize: 14,
   fontWeight: 600,
 };
