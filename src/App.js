@@ -1,212 +1,57 @@
 
-import React from "react";
+/* Base */
+:root { --dark:#0f172a; }
+*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
 
-const App = () => {
-  return (
-        <div>
-      {/* Navbar */}
-{/* Navbar */}
-<nav className="navbar">
-  <img src="/vettoriale.png" alt="My Home Immobiliare" className="logo" />
+.hero-inner{ padding: 0 16px; }
+.hero-title{ font-size: clamp(28px, 6vw, 52px); font-weight: 700; text-shadow: 0 2px 16px rgba(0,0,0,.6); margin: 0; }
+.hero-sub{ margin-top: 12px; font-size: clamp(14px,3.5vw,18px); opacity:.95; text-shadow: 0 1px 8px rgba(0,0,0,.5); }
 
-  <div className="nav-links">
-    <a href="#home" className="nav-link">Home</a>
-    <a href="#annunci" className="nav-link">Annunci</a>
-    <a href="#contatti" className="nav-link">Contatti</a>
-  </div>
-</nav>
-    {/* HERO */}
-  <header className="hero"
-    {/* HERO */}
-      <header
-        className="hero"
-        style={{
-          position: "relative",
-          minHeight: "60vh",
-          display: "grid",
-          placeItems: "center",
-          color: "#fff",
-          textAlign: "center",
-          backgroundImage: "url('/hero.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-  <img 
-  src="/logo.png" 
-  alt="My Home Immobiliare" 
-  style={{
-    position: "absolute",
-    top: "20px",
-    left: "20px",
-    height: "50px",
-    objectFit: "contain",
-    zIndex: 10
-  }}
-/>
-  <div className="hero-inner" style={{ padding: "0 16px" }}>
-          <h1
-            style={{
-              fontSize: "clamp(28px, 6vw, 52px)",
-              fontWeight: 700,
-              textShadow: "0 2px 16px rgba(0,0,0,.6)",
-              margin: 0,
-            }}
-          >
-            Ogni casa una storia. La tua!
-          </h1>
-          <p
-            className="hero-sub"
-            style={{
-              marginTop: 12,
-              fontSize: "clamp(14px, 3.5vw, 18px)",
-              opacity: 0.95,
-              textShadow: "0 1px 8px rgba(0,0,0,.5)",
-            }}
-          >
-            Trova subito la tua casa
-          </p>
+/* Navbar */
+.navbar{
+  position:absolute; top:0; left:0; width:100%;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 20px; background:rgba(0,0,0,.35); z-index:20;
+}
+.logo{ height:46px; object-fit:contain; }
+.hamburger{ display:none; background:transparent; border:0; color:#fff; font-size:28px; line-height:1; cursor:pointer; }
+.nav-links{ display:flex; gap:20px; }
+.nav-link{ color:#fff; text-decoration:none; font-weight:600; }
 
-          {/* SEARCH BAR */}
-          <div
-            className="search"
-            style={{
-              marginTop: 20,
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr 1fr auto",
-              gap: 10,
-              width: "min(980px, 100%)",
-              background: "rgba(0,0,0,.35)",
-              padding: 10,
-              borderRadius: 12,
-              backdropFilter: "blur(4px)",
-            }}
-          >
-            <select className="search-select" defaultValue="vendite">
-              <option value="vendite">Vendite</option>
-              <option value="affitti">Affitti</option>
-            </select>
+/* Search */
+.search{ margin-top:20px; display:grid; grid-template-columns:1fr 1fr 1fr auto; gap:10px;
+  width:min(980px,100%); background:rgba(0,0,0,.35); padding:12px; border-radius:12px; backdrop-filter: blur(4px);
+}
+.search-select, .search-input{ width:100%; padding:12px; border-radius:8px; border:1px solid #e5e7eb; font-size:16px; }
+.search-button{ background:var(--dark); color:#fff; border:none; border-radius:8px; padding:0 18px; font-weight:700; cursor:pointer; }
 
-            <select className="search-select" defaultValue="tutte">
-              <option value="tutte">Tutte le tipologie</option>
-              <option value="appartamento">Appartamento</option>
-              <option value="villa">Villa</option>
-              <option value="attico">Attico</option>
-              <option value="casale">Casale</option>
-            </select>
+/* Cards */
+.cards-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.card{ border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; background:#fff; }
+.card-img{ aspect-ratio:16/9; background:#f3f4f6; }
+.card-img img{ width:100%; height:100%; object-fit:cover; display:block; }
+.card-body{ padding:14px; }
+.card-body h3{ margin:0 0 6px; font-size:18px; }
+.card-badge{ display:inline-block; background:var(--dark); color:#fff; border-radius:6px; padding:6px 10px; font-size:12px; font-weight:600; }
 
-            <input
-              className="search-input"
-              type="text"
-              placeholder="Città o zona"
-            />
-            <button
-              className="search-button"
-              style={{
-                background: "#0f172a",
-                color: "#fff",
-                border: "none",
-                borderRadius: 8,
-                padding: "0 18px",
-                fontWeight: 700,
-                cursor: "pointer",
-              }}
-            >
-              Cerca
-            </button>
-          </div>
-        </div>
-      </header>
+/* Tablet */
+@media (max-width: 900px){
+  .logo{ height:38px; }
+  .search{ grid-template-columns:1fr 1fr 1fr auto; }
+  .cards-grid{ grid-template-columns:repeat(2,1fr); }
+}
 
-      {/* ANNUNCI IN EVIDENZA */}
-      <main style={{ padding: "28px 16px 56px" }}>
-        <section style={{ maxWidth: 1160, margin: "0 auto" }}>
-          <div
-            className="cards-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: 16,
-            }}
-          >
-            {[
-              {
-                img: "immagine1.jpg",
-                titolo: "Appartamento in centro",
-                info: "€250.000 · 3 camere",
-              },
-              {
-                img: "immagine2.jpg",
-                titolo: "Villa con piscina",
-                info: "€500.000 · 4 camere",
-              },
-              {
-                img: "immagine3.jpg",
-                titolo: "Casale in campagna",
-                info: "€350.000 · 5 camere",
-              },
-              {
-                img: "immagine4.jpg",
-                titolo: "Monolocale ristrutturato",
-                info: "€120.000 · 1 camera",
-              },
-              {
-                img: "immagine5.jpg",
-                titolo: "Attico con terrazza",
-                info: "€450.000 · 3 camere",
-              },
-              {
-                img: "immagine6.jpg",
-                titolo: "Appartamento in periferia",
-                info: "€200.000 · 2 camere",
-              },
-            ].map((casa, i) => (
-              <article
-                key={i}
-                className="card"
-                style={{
-                  border: "1px solid #e5e7eb",
-                  borderRadius: 12,
-                  overflow: "hidden",
-                  background: "#fff",
-                }}
-              >
-                <div style={{ aspectRatio: "16/9", background: "#f3f4f6" }}>
-                  <img
-                    src={casa.img}
-                    alt={casa.titolo}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  />
-                </div>
-                <div style={{ padding: 14 }}>
-                  <h3 style={{ margin: "0 0 6px", fontSize: 18 }}>{casa.titolo}</h3>
-                  <p
-                    className="card-badge"
-                    style={{
-                      display: "inline-block",
-                      background: "#0f172a",
-                      color: "#fff",
-                      borderRadius: 6,
-                      padding: "6px 10px",
-                      fontSize: 12,
-                      fontWeight: 600,
-                    }}
-                  >
-                    {casa.info}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-      </main>
+/* Mobile */
+@media (max-width: 600px){
+  .logo{ height:34px; }
+  .hamburger{ display:block; }
+  .nav-links{ display:none; }
+  .nav-links.open{
+    display:flex; flex-direction:column; gap:12px; position:absolute; right:12px; top:64px;
+    background:rgba(0,0,0,.85); padding:12px; border-radius:10px;
+  }
 
-      <footer style={{ textAlign: "center", padding: "24px 12px", color: "#64748b" }}>
-        <p style={{ margin: 0 }}>© {new Date().getFullYear()} My Home Immobiliare · Tutti i diritti riservati.</p>
-      </footer>
-    </div>
-  );
-};
-
-export default App;
+  .search{ grid-template-columns:1fr; gap:8px; }
+  .search-button{ height:44px; }
+  .cards-grid{ grid-template-columns:1fr; }
+}
