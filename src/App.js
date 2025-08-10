@@ -12,7 +12,7 @@
         <div class="hero">
             <img src="hero.jpg" alt="Hero Image" class="hero-image">
             <div class="hero-content">
-                <h1>Oggi casa una storia. La tua!</h1>
+                <h1>Ogni casa una storia. La tua!</h1>
                 <p>Trova subito la tua casa</p>
                 <div class="search-bar">
                     <form action="/search" method="get">
