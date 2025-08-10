@@ -5,37 +5,17 @@ const App = () => {
   return (
         <div>
       {/* Navbar */}
-  <nav
-    style={{
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      padding: "10px 20px",
-      background: "rgba(0, 0, 0, 0.3)", // trasparente
-      color: "#fff",
-      zIndex: 20
-    }}
-  >
-    <img
-      src="/vettoriale.png"
-      alt="My Home Immobiliare"
-      style={{
-        height: "40px",
-        objectFit: "contain"
-      }}
-    />
-    <div style={{ display: "flex", gap: "20px" }}>
-      <a href="#" style={{ color: "#fff", textDecoration: "none" }}>Home</a>
-      <a href="#" style={{ color: "#fff", textDecoration: "none" }}>Annunci</a>
-      <a href="#" style={{ color: "#fff", textDecoration: "none" }}>Contatti</a>
-    </div>
-  </nav>
+{/* Navbar */}
+<nav className="navbar">
+  <img src="/vettoriale.png" alt="My Home Immobiliare" className="logo" />
 
-  {/* HERO */}
+  <div className="nav-links">
+    <a href="#home" className="nav-link">Home</a>
+    <a href="#annunci" className="nav-link">Annunci</a>
+    <a href="#contatti" className="nav-link">Contatti</a>
+  </div>
+</nav>
+    {/* HERO */}
   <header className="hero"
     {/* HERO */}
       <header
