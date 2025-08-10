@@ -1,57 +1,103 @@
+import React, { useState } from "react";
 
-/* Base */
-:root { --dark:#0f172a; }
-*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
+const App = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-.hero-inner{ padding: 0 16px; }
-.hero-title{ font-size: clamp(28px, 6vw, 52px); font-weight: 700; text-shadow: 0 2px 16px rgba(0,0,0,.6); margin: 0; }
-.hero-sub{ margin-top: 12px; font-size: clamp(14px,3.5vw,18px); opacity:.95; text-shadow: 0 1px 8px rgba(0,0,0,.5); }
+  return (
+    <div id="home">
+      {/* NAVBAR */}
+      <nav className="navbar">
+        <img src="/vettoriale.png" alt="My Home Immobiliare" className="logo" />
 
-/* Navbar */
-.navbar{
-  position:absolute; top:0; left:0; width:100%;
-  display:flex; align-items:center; justify-content:space-between;
-  padding:12px 20px; background:rgba(0,0,0,.35); z-index:20;
-}
-.logo{ height:46px; object-fit:contain; }
-.hamburger{ display:none; background:transparent; border:0; color:#fff; font-size:28px; line-height:1; cursor:pointer; }
-.nav-links{ display:flex; gap:20px; }
-.nav-link{ color:#fff; text-decoration:none; font-weight:600; }
+        {/* Hamburger (solo mobile) */}
+        <button
+          className="hamburger"
+          aria-label="Apri menu"
+          onClick={() => setMenuOpen((v) => !v)}
+        >
+          ☰
+        </button>
 
-/* Search */
-.search{ margin-top:20px; display:grid; grid-template-columns:1fr 1fr 1fr auto; gap:10px;
-  width:min(980px,100%); background:rgba(0,0,0,.35); padding:12px; border-radius:12px; backdrop-filter: blur(4px);
-}
-.search-select, .search-input{ width:100%; padding:12px; border-radius:8px; border:1px solid #e5e7eb; font-size:16px; }
-.search-button{ background:var(--dark); color:#fff; border:none; border-radius:8px; padding:0 18px; font-weight:700; cursor:pointer; }
+        {/* Link */}
+        <div className={`nav-links ${menuOpen ? "open" : ""}`}>
+          <a href="#home" className="nav-link" onClick={() => setMenuOpen(false)}>Home</a>
+          <a href="#annunci" className="nav-link" onClick={() => setMenuOpen(false)}>Annunci</a>
+          <a href="#contatti" className="nav-link" onClick={() => setMenuOpen(false)}>Contatti</a>
+        </div>
+      </nav>
 
-/* Cards */
-.cards-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-.card{ border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; background:#fff; }
-.card-img{ aspect-ratio:16/9; background:#f3f4f6; }
-.card-img img{ width:100%; height:100%; object-fit:cover; display:block; }
-.card-body{ padding:14px; }
-.card-body h3{ margin:0 0 6px; font-size:18px; }
-.card-badge{ display:inline-block; background:var(--dark); color:#fff; border-radius:6px; padding:6px 10px; font-size:12px; font-weight:600; }
+      {/* HERO */}
+      <header
+        className="hero"
+        style={{
+          position: "relative",
+          minHeight: "60vh",
+          display: "grid",
+          placeItems: "center",
+          color: "#fff",
+          textAlign: "center",
+          backgroundImage: "url('/hero.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="hero-inner">
+          <h1 className="hero-title">Ogni casa una storia. La tua!</h1>
+          <p className="hero-sub">Trova subito la tua casa</p>
 
-/* Tablet */
-@media (max-width: 900px){
-  .logo{ height:38px; }
-  .search{ grid-template-columns:1fr 1fr 1fr auto; }
-  .cards-grid{ grid-template-columns:repeat(2,1fr); }
-}
+          {/* SEARCH BAR */}
+          <div className="search">
+            <select className="search-select" defaultValue="vendite">
+              <option value="vendite">Vendite</option>
+              <option value="affitti">Affitti</option>
+            </select>
 
-/* Mobile */
-@media (max-width: 600px){
-  .logo{ height:34px; }
-  .hamburger{ display:block; }
-  .nav-links{ display:none; }
-  .nav-links.open{
-    display:flex; flex-direction:column; gap:12px; position:absolute; right:12px; top:64px;
-    background:rgba(0,0,0,.85); padding:12px; border-radius:10px;
-  }
+            <select className="search-select" defaultValue="tutte">
+              <option value="tutte">Tutte le tipologie</option>
+              <option value="appartamento">Appartamento</option>
+              <option value="villa">Villa</option>
+              <option value="attico">Attico</option>
+              <option value="casale">Casale</option>
+            </select>
 
-  .search{ grid-template-columns:1fr; gap:8px; }
-  .search-button{ height:44px; }
-  .cards-grid{ grid-template-columns:1fr; }
-}
+            <input className="search-input" type="text" placeholder="Città o zona" />
+            <button className="search-button">Cerca</button>
+          </div>
+        </div>
+      </header>
+
+      {/* ANNUNCI IN EVIDENZA */}
+      <main style={{ padding: "28px 16px 56px" }}>
+        <section id="annunci" style={{ maxWidth: 1160, margin: "0 auto" }}>
+          <div className="cards-grid">
+            {[
+              { img: "immagine1.jpg", titolo: "Appartamento in centro", info: "€250.000 · 3 camere" },
+              { img: "immagine2.jpg", titolo: "Villa con piscina", info: "€500.000 · 4 camere" },
+              { img: "immagine3.jpg", titolo: "Casale in campagna", info: "€350.000 · 5 camere" },
+              { img: "immagine4.jpg", titolo: "Monolocale ristrutturato", info: "€120.000 · 1 camera" },
+              { img: "immagine5.jpg", titolo: "Attico con terrazza", info: "€450.000 · 3 camere" },
+              { img: "immagine6.jpg", titolo: "Appartamento in periferia", info: "€200.000 · 2 camere" },
+            ].map((casa, i) => (
+              <article key={i} className="card">
+                <div className="card-img">
+                  <img src={casa.img} alt={casa.titolo} />
+                </div>
+                <div className="card-body">
+                  <h3>{casa.titolo}</h3>
+                  <p className="card-badge">{casa.info}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <footer id="contatti" style={{ textAlign: "center", padding: "24px 12px", color: "#64748B" }}>
+        <p style={{ margin: 0 }}>© {new Date().getFullYear()} My Home Immobiliare · Tutti i diritti riservati.</p>
+      </footer>
+    </div>
+  );
+};
+
+export default App;
