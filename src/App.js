@@ -51,7 +51,7 @@ function Hero({ tipo, setTipo, categoria, setCategoria, citta, setCitta, onSearc
           Ogni casa una storia. <span style={{ whiteSpace: "nowrap" }}>La tua!</span>
         </h1>
         <p style={{ opacity: 0.9, marginTop: 8 }}>
-          Trova subito l’immobile giusto tra vendite e affitti.
+          Trova subito la tua casa.
         </p>
 
         <form
