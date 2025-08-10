@@ -83,3 +83,53 @@ button, input, select { font: inherit; }
     font-size: 16px;
   }
 }
+/* ===== NAVBAR ===== */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.30); /* leggera trasparenza scura per contrasto */
+  backdrop-filter: blur(8px);
+  z-index: 20;
+}
+
+.logo {
+  height: 40px;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-link {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  .logo {
+    height: 32px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-weight: 600;
+  }
+}
