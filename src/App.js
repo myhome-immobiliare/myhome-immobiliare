@@ -1,76 +1,187 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Home Immobiliare</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <div class="hero">
-            <img src="hero.jpg" alt="Hero Image" class="hero-image">
-            <div class="hero-content">
-                <h1>Ogni casa una storia. La tua!</h1>
-                <p>Trova subito la tua casa</p>
-                <div class="search-bar">
-                    <form action="/search" method="get">
-                        <input type="text" name="query" placeholder="Cerca la tua casa..." id="search-input">
-                        <select name="tipologia" id="tipologia">
-                            <option value="vendita">Vendita</option>
-                            <option value="affitto">Affitto</option>
-                            <option value="casale">Casale</option>
-                        </select>
-                        <input type="text" name="citta" placeholder="Tutte le città" id="city-input">
-                        <button type="submit">Cerca</button>
-                    </form>
-                </div>
-            </div>
+
+import React from "react";
+
+const App = () => {
+  return (
+    <div>
+      {/* HERO */}
+      <header
+        className="hero"
+        style={{
+          position: "relative",
+          minHeight: "60vh",
+          display: "grid",
+          placeItems: "center",
+          color: "#fff",
+          textAlign: "center",
+          backgroundImage: "url('/hero.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="hero-inner" style={{ padding: "0 16px" }}>
+          <h1
+            style={{
+              fontSize: "clamp(28px, 6vw, 52px)",
+              fontWeight: 700,
+              textShadow: "0 2px 16px rgba(0,0,0,.6)",
+              margin: 0,
+            }}
+          >
+            Ogni casa una storia. La tua!
+          </h1>
+          <p
+            className="hero-sub"
+            style={{
+              marginTop: 12,
+              fontSize: "clamp(14px, 3.5vw, 18px)",
+              opacity: 0.95,
+              textShadow: "0 1px 8px rgba(0,0,0,.5)",
+            }}
+          >
+            Trova subito la tua casa
+          </p>
+
+          {/* SEARCH BAR */}
+          <div
+            className="search"
+            style={{
+              marginTop: 20,
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr 1fr auto",
+              gap: 10,
+              width: "min(980px, 100%)",
+              background: "rgba(0,0,0,.35)",
+              padding: 10,
+              borderRadius: 12,
+              backdropFilter: "blur(4px)",
+            }}
+          >
+            <select className="search-select" defaultValue="vendite">
+              <option value="vendite">Vendite</option>
+              <option value="affitti">Affitti</option>
+            </select>
+
+            <select className="search-select" defaultValue="tutte">
+              <option value="tutte">Tutte le tipologie</option>
+              <option value="appartamento">Appartamento</option>
+              <option value="villa">Villa</option>
+              <option value="attico">Attico</option>
+              <option value="casale">Casale</option>
+            </select>
+
+            <input
+              className="search-input"
+              type="text"
+              placeholder="Città o zona"
+            />
+            <button
+              className="search-button"
+              style={{
+                background: "#0f172a",
+                color: "#fff",
+                border: "none",
+                borderRadius: 8,
+                padding: "0 18px",
+                fontWeight: 700,
+                cursor: "pointer",
+              }}
+            >
+              Cerca
+            </button>
+          </div>
         </div>
-    </header>
+      </header>
 
-    <main>
-        <section class="featured">
-            <h2>Annunci in evidenza</h2>
-            <div class="annunci">
-                <div class="annuncio">
-                    <img src="immagine1.jpg" alt="Annuncio 1">
-                    <h3>Appartamento in centro</h3>
-                    <p>€250.000 - 3 camere da letto</p>
+      {/* ANNUNCI IN EVIDENZA */}
+      <main style={{ padding: "28px 16px 56px" }}>
+        <section style={{ maxWidth: 1160, margin: "0 auto" }}>
+          <div
+            className="cards-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: 16,
+            }}
+          >
+            {[
+              {
+                img: "immagine1.jpg",
+                titolo: "Appartamento in centro",
+                info: "€250.000 · 3 camere",
+              },
+              {
+                img: "immagine2.jpg",
+                titolo: "Villa con piscina",
+                info: "€500.000 · 4 camere",
+              },
+              {
+                img: "immagine3.jpg",
+                titolo: "Casale in campagna",
+                info: "€350.000 · 5 camere",
+              },
+              {
+                img: "immagine4.jpg",
+                titolo: "Monolocale ristrutturato",
+                info: "€120.000 · 1 camera",
+              },
+              {
+                img: "immagine5.jpg",
+                titolo: "Attico con terrazza",
+                info: "€450.000 · 3 camere",
+              },
+              {
+                img: "immagine6.jpg",
+                titolo: "Appartamento in periferia",
+                info: "€200.000 · 2 camere",
+              },
+            ].map((casa, i) => (
+              <article
+                key={i}
+                className="card"
+                style={{
+                  border: "1px solid #e5e7eb",
+                  borderRadius: 12,
+                  overflow: "hidden",
+                  background: "#fff",
+                }}
+              >
+                <div style={{ aspectRatio: "16/9", background: "#f3f4f6" }}>
+                  <img
+                    src={casa.img}
+                    alt={casa.titolo}
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
                 </div>
-                <div class="annuncio">
-                    <img src="immagine2.jpg" alt="Annuncio 2">
-                    <h3>Villa con piscina</h3>
-                    <p>€500.000 - 4 camere da letto</p>
+                <div style={{ padding: 14 }}>
+                  <h3 style={{ margin: "0 0 6px", fontSize: 18 }}>{casa.titolo}</h3>
+                  <p
+                    className="card-badge"
+                    style={{
+                      display: "inline-block",
+                      background: "#0f172a",
+                      color: "#fff",
+                      borderRadius: 6,
+                      padding: "6px 10px",
+                      fontSize: 12,
+                      fontWeight: 600,
+                    }}
+                  >
+                    {casa.info}
+                  </p>
                 </div>
-                <div class="annuncio">
-                    <img src="immagine3.jpg" alt="Annuncio 3">
-                    <h3>Casale in campagna</h3>
-                    <p>€350.000 - 5 camere da letto</p>
-                </div>
-                <div class="annuncio">
-                    <img src="immagine4.jpg" alt="Annuncio 4">
-                    <h3>Monolocale ristrutturato</h3>
-                    <p>€150.000 - 1 camera da letto</p>
-                </div>
-                <div class="annuncio">
-                    <img src="immagine5.jpg" alt="Annuncio 5">
-                    <h3>Attico con terrazza</h3>
-                    <p>€450.000 - 3 camere da letto</p>
-                </div>
-                <div class="annuncio">
-                    <img src="immagine6.jpg" alt="Annuncio 6">
-                    <h3>Appartamento in periferia</h3>
-                    <p>€200.000 - 2 camere da letto</p>
-                </div>
-            </div>
+              </article>
+            ))}
+          </div>
         </section>
-    </main>
+      </main>
 
-    <footer>
-        <p>© 2025 My Home Immobiliare - Tutti i diritti riservati.</p>
-    </footer>
-</body>
-</html>
+      <footer style={{ textAlign: "center", padding: "24px 12px", color: "#64748b" }}>
+        <p style={{ margin: 0 }}>© {new Date().getFullYear()} My Home Immobiliare · Tutti i diritti riservati.</p>
+      </footer>
+    </div>
+  );
+};
 
+export default App;
