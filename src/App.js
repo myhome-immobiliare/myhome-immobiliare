@@ -4,7 +4,40 @@ import React from "react";
 const App = () => {
   return (
         <div>
-      {/* HERO */}
+      {/* Navbar */}
+  <nav
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      padding: "10px 20px",
+      background: "rgba(0, 0, 0, 0.3)", // trasparente
+      color: "#fff",
+      zIndex: 20
+    }}
+  >
+    <img
+      src="/vettoriale.png"
+      alt="My Home Immobiliare"
+      style={{
+        height: "40px",
+        objectFit: "contain"
+      }}
+    />
+    <div style={{ display: "flex", gap: "20px" }}>
+      <a href="#" style={{ color: "#fff", textDecoration: "none" }}>Home</a>
+      <a href="#" style={{ color: "#fff", textDecoration: "none" }}>Annunci</a>
+      <a href="#" style={{ color: "#fff", textDecoration: "none" }}>Contatti</a>
+    </div>
+  </nav>
+
+  {/* HERO */}
+  <header className="hero"
+    {/* HERO */}
       <header
         className="hero"
         style={{
