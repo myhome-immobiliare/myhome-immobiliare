@@ -3,7 +3,7 @@ import React from "react";
 
 const App = () => {
   return (
-    <div>
+        <div>
       {/* HERO */}
       <header
         className="hero"
@@ -20,7 +20,19 @@ const App = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="hero-inner" style={{ padding: "0 16px" }}>
+  <img 
+  src="/logo.png" 
+  alt="My Home Immobiliare" 
+  style={{
+    position: "absolute",
+    top: "20px",
+    left: "20px",
+    height: "50px",
+    objectFit: "contain",
+    zIndex: 10
+  }}
+/>
+  <div className="hero-inner" style={{ padding: "0 16px" }}>
           <h1
             style={{
               fontSize: "clamp(28px, 6vw, 52px)",
