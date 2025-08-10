@@ -1,0 +1,25 @@
+/* Layout base (desktop/tablet) */
+.hero-inner { padding: 0 16px; }
+.search { display: grid; grid-template-columns: 1.1fr 1.1fr 1.1fr auto; gap: 10px; }
+.search select, .search input { width: 100%; }
+.search button { white-space: nowrap; }
+.cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.card-badge { font-size: 12px; padding: 6px 10px; }
+
+/* Tablet */
+@media (max-width: 900px) {
+  .search { grid-template-columns: 1fr 1fr auto; }
+  .cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .search { grid-template-columns: 1fr; }
+  .search button { width: 100%; padding: 14px 18px; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .headline { font-size: clamp(26px, 7vw, 34px) !important; }
+  .hero-sub { font-size: 16px !important; }
+  .card-badge { font-size: 11px; padding: 5px 9px; }
+  /* Evita lo zoom automatico su iOS/Android quando si toccano gli input */
+  .search select, .search input { padding: 12px !important; font-size: 16px; }
+}
