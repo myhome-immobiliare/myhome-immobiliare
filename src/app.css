@@ -1,25 +1,85 @@
-/* Layout base (desktop/tablet) */
-.hero-inner { padding: 0 16px; }
-.search { display: grid; grid-template-columns: 1.1fr 1.1fr 1.1fr auto; gap: 10px; }
-.search select, .search input { width: 100%; }
-.search button { white-space: nowrap; }
-.cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.card-badge { font-size: 12px; padding: 6px 10px; }
+/* --- Base/fallback --- */
+* { box-sizing: border-box; }
+img { max-width: 100%; height: auto; display: block; }
+button, input, select { font: inherit; }
 
-/* Tablet */
-@media (max-width: 900px) {
-  .search { grid-template-columns: 1fr 1fr auto; }
-  .cards-grid { grid-template-columns: repeat(2, 1fr); }
+/* HERO */
+.hero-image { width: 100%; height: auto; display: block; }
+.hero-content { padding: 0 16px; }
+
+/* Titoli più flessibili */
+.hero-content h1 { 
+  font-size: clamp(28px, 5vw, 44px);
+  line-height: 1.15;
+  margin: 0 0 8px;
+}
+.hero-content p {
+  font-size: clamp(16px, 2.5vw, 18px);
+  margin: 0 0 14px;
 }
 
-/* Mobile */
+/* --- Barra di ricerca (supporta sia .search che .search-bar form) --- */
+.search,
+.search-bar form {
+  display: grid;
+  grid-template-columns: 1.1fr 1.1fr 1.1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.search input,
+.search select,
+.search button,
+.search-bar form input,
+.search-bar form select,
+.search-bar form button {
+  width: 100%;
+  padding: 12px;
+}
+
+/* --- Griglia annunci --- */
+.annunci {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.annuncio {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* --- Tablet --- */
+@media (max-width: 900px) {
+  .search,
+  .search-bar form {
+    grid-template-columns: 1fr 1fr auto;
+  }
+  .annunci {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Mobile --- */
 @media (max-width: 600px) {
-  .search { grid-template-columns: 1fr; }
-  .search button { width: 100%; padding: 14px 18px; }
-  .cards-grid { grid-template-columns: 1fr; }
-  .headline { font-size: clamp(26px, 7vw, 34px) !important; }
-  .hero-sub { font-size: 16px !important; }
-  .card-badge { font-size: 11px; padding: 5px 9px; }
-  /* Evita lo zoom automatico su iOS/Android quando si toccano gli input */
-  .search select, .search input { padding: 12px !important; font-size: 16px; }
+  .search,
+  .search-bar form {
+    grid-template-columns: 1fr;             /* campi in colonna */
+  }
+  .search button,
+  .search-bar form button {
+    width: 100%;                            /* bottone full-width */
+    padding: 14px 18px;
+  }
+  .annunci {
+    grid-template-columns: 1fr;             /* 1 card per riga */
+  }
+
+  /* Evita zoom automatico su iOS/Android quando si toccano input */
+  .search input, .search select,
+  .search-bar form input, .search-bar form select {
+    font-size: 16px;
+  }
 }
