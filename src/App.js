@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { supabase } from "./supabaseClient"; // se non usi Supabase, puoi rimuovere queste 3 righe
-// Se non usi Supabase ancora, commenta la fetch sotto e metti un array mock.
+import { supabase } from "./supabaseClient"; // ok se non hai ancora dati: gestiamo fallback
 
-const App = () => {
+export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [annunci, setAnnunci] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // helper: ottiene l'URL pubblico per un file nel bucket "immagini"
   const imgUrl = (path) => {
     if (!path) return "";
     const { data } = supabase.storage.from("immagini").getPublicUrl(path);
@@ -24,9 +22,8 @@ const App = () => {
           .limit(12);
         if (error) throw error;
         setAnnunci(data || []);
-      } catch (e) {
-        console.warn("Supabase non collegato o vuoto. Mostro 0 risultati.");
-        setAnnunci([]);
+      } catch {
+        setAnnunci([]); // nessun dato = nessun errore visivo
       } finally {
         setLoading(false);
       }
@@ -42,6 +39,7 @@ const App = () => {
           <img src="/vettoriale.png" alt="My Home Immobiliare" />
         </a>
 
+        {/* Hamburger solo mobile */}
         <button
           className="hamburger"
           aria-label={menuOpen ? "Chiudi menu" : "Apri menu"}
@@ -52,6 +50,7 @@ const App = () => {
           <span />
         </button>
 
+        {/* Link: desktop sempre visibili, mobile nel dropdown */}
         <div className="nav-links">
           <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
           <a href="#immobili" onClick={() => setMenuOpen(false)}>Immobili</a>
@@ -68,19 +67,16 @@ const App = () => {
           minHeight: "60vh",
           display: "grid",
           placeItems: "center",
-          color: "#fff",
-          textAlign: "center",
           backgroundImage: "url('/hero.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* overlay per testo leggibile */}
         <div className="hero-overlay" />
-
         <div className="hero-inner">
-          <h1 className="hero-title">Ogni casa una storia. La tua!</h1>
+          {/* Titolo nascosto SOLO su mobile con CSS .hide-mobile */}
+          <h1 className="hero-title hide-mobile">Ogni casa una storia. La tua!</h1>
           <p className="hero-sub">Trova subito la tua casa</p>
 
           {/* SEARCH BAR */}
@@ -153,6 +149,4 @@ const App = () => {
       </footer>
     </div>
   );
-};
-
-export default App;
+}
