@@ -1,81 +1,104 @@
 import React, { useEffect, useState } from "react";
-import { supabase } from "./supabaseClient"; // ok se non hai ancora dati: gestiamo fallback
+// Se hai già il client di Supabase lascia questa import:
+import { supabase } from "./supabaseClient"; // altrimenti il codice mostrerà i 6 annunci statici di fallback
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [annunci, setAnnunci] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const imgUrl = (path) => {
+  // helper: URL pubblico di un file su storage
+  function imgUrl(path) {
     if (!path) return "";
     const { data } = supabase.storage.from("immagini").getPublicUrl(path);
     return data?.publicUrl || "";
-  };
+  }
 
+  // carica annunci da Supabase (se configurato) altrimenti fallback
   useEffect(() => {
-    const load = async () => {
+    async function load() {
       try {
         const { data, error } = await supabase
           .from("annunci")
           .select("*")
           .order("created_at", { ascending: false })
           .limit(12);
+
         if (error) throw error;
         setAnnunci(data || []);
       } catch {
-        setAnnunci([]); // nessun dato = nessun errore visivo
+        // fallback statico
+        setAnnunci([
+          { id: "1", titolo: "Appartamento in centro", info: "€250.000 · 3 camere", cover_path: "", img: "immagine1.jpg" },
+          { id: "2", titolo: "Villa con piscina", info: "€500.000 · 4 camere", cover_path: "", img: "immagine2.jpg" },
+          { id: "3", titolo: "Casale in campagna", info: "€350.000 · 5 camere", cover_path: "", img: "immagine3.jpg" },
+          { id: "4", titolo: "Monolocale ristrutturato", info: "€120.000 · 1 camera", cover_path: "", img: "immagine4.jpg" },
+          { id: "5", titolo: "Attico con terrazza", info: "€450.000 · 3 camere", cover_path: "", img: "immagine5.jpg" },
+          { id: "6", titolo: "Appartamento in periferia", info: "€200.000 · 2 camere", cover_path: "", img: "immagine6.jpg" },
+        ]);
       } finally {
         setLoading(false);
       }
-    };
+    }
     load();
   }, []);
 
+  // scroll morbido
+  const go = (id) => {
+    setMenuOpen(false);
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
-    <div id="home">
+    <div>
       {/* NAVBAR */}
       <nav className={`navbar ${menuOpen ? "open" : ""}`}>
-        <a href="#home" className="brand" onClick={() => setMenuOpen(false)}>
-          <img src="/vettoriale.png" alt="My Home Immobiliare" />
-        </a>
-
-        {/* Hamburger solo mobile */}
+        <img src="/vettoriale.png" alt="My Home Immobiliare" className="logo" />
         <button
-          className="hamburger"
+          className={`menu-btn ${menuOpen ? "active" : ""}`}
           aria-label={menuOpen ? "Chiudi menu" : "Apri menu"}
           onClick={() => setMenuOpen((o) => !o)}
         >
-          <span />
-          <span />
-          <span />
+          <span></span><span></span><span></span>
         </button>
 
-        {/* Link: desktop sempre visibili, mobile nel dropdown */}
+        {/* Link desktop */}
         <div className="nav-links">
-          <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
-          <a href="#immobili" onClick={() => setMenuOpen(false)}>Immobili</a>
-          <a href="#servizi" onClick={() => setMenuOpen(false)}>Servizi</a>
-          <a href="#contatti" onClick={() => setMenuOpen(false)}>Contatti</a>
+          <button className="nav-link" onClick={() => go("home")}>Home</button>
+          <button className="nav-link" onClick={() => go("immobili")}>Immobili</button>
+          <button className="nav-link" onClick={() => go("servizi")}>Servizi</button>
+          <button className="nav-link" onClick={() => go("contatti")}>Contatti</button>
         </div>
+
+        {/* Menu mobile */}
+        {menuOpen && (
+          <div className="nav-dropdown">
+            <button className="nav-link" onClick={() => go("home")}>Home</button>
+            <button className="nav-link" onClick={() => go("immobili")}>Immobili</button>
+            <button className="nav-link" onClick={() => go("servizi")}>Servizi</button>
+            <button className="nav-link" onClick={() => go("contatti")}>Contatti</button>
+          </div>
+        )}
       </nav>
 
-      {/* HERO */}
-      <header
-        className="hero"
-        style={{
-          position: "relative",
-          minHeight: "60vh",
-          display: "grid",
-          placeItems: "center",
-          backgroundImage: "url('/hero.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="hero-overlay" />
-        <div className="hero-inner">
-          {/* Titolo nascosto SOLO su mobile con CSS .hide-mobile */}
+      {/* HERO / HOME */}
+      <header id="home" className="hero" style={{
+        position: "relative",
+        minHeight: "60vh",
+        display: "grid",
+        placeItems: "center",
+        color: "#fff",
+        textAlign: "center",
+        backgroundImage: "url('/hero.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }}>
+        <div className="hero-overlay"></div>
+
+        <div className="hero-inner" style={{ padding: "0 16px" }}>
+          {/* H1 nascosto SOLO su mobile (classe già gestita in app.css) */}
           <h1 className="hero-title hide-mobile">Ogni casa una storia. La tua!</h1>
           <p className="hero-sub">Trova subito la tua casa</p>
 
@@ -94,15 +117,16 @@ export default function App() {
               <option value="casale">Casale</option>
               <option value="monolocale">Monolocale</option>
             </select>
-            <input className="search-input" 
-            type="text" placeholder="Città, 
-              indirizzo o CAP" />
-              <button 
-              className="search-button">Cerca</
-              button>  
-              </div>
-              </div>      
-              </header>
+
+            <input
+              className="search-input"
+              type="text"
+              placeholder="Città, indirizzo o CAP"
+            />
+            <button className="search-button">Cerca</button>
+          </div>
+        </div>
+      </header>
 
       {/* IMMOBILI */}
       <main id="immobili" className="main">
@@ -115,18 +139,16 @@ export default function App() {
             <div className="cards-grid">
               {annunci.map((casa) => (
                 <article key={casa.id} className="card">
-                  <div className="card-media">
+                  <div className="card-media" style={{ aspectRatio: "16/9", background: "#f3f4f6" }}>
                     <img
-                      src={imgUrl(casa.cover_path)}
+                      src={casa.cover_path ? imgUrl(casa.cover_path) : `/${casa.img || "hero.jpg"}`}
                       alt={casa.titolo}
-                      onError={(e) => (e.currentTarget.style.opacity = 0.2)}
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
                   </div>
-                  <div className="card-body">
-                    <h3 className="card-title">{casa.titolo}</h3>
-                    <p className="card-badge">
-                      €{Intl.NumberFormat("it-IT").format(casa.prezzo)} • {casa.camere} camere
-                    </p>
+                  <div style={{ padding: 14 }}>
+                    <h3 style={{ margin: "0 0 6px", fontSize: 18 }}>{casa.titolo}</h3>
+                    <p className="card-badge">{casa.info}</p>
                   </div>
                 </article>
               ))}
@@ -136,19 +158,66 @@ export default function App() {
       </main>
 
       {/* SERVIZI */}
-      <section id="servizi" className="container section">
-        <h2>Servizi</h2>
-        <p>Valutazioni, compravendite, locazioni, pratiche e consulenze su misura.</p>
+      <section id="servizi" className="main">
+        <section className="container">
+          <h2 style={{ textAlign: "center", marginBottom: 20 }}>I nostri servizi</h2>
+          <div className="cards-grid">
+            {[
+              { t: "Valutazioni gratuite", d: "Stime realistiche basate sui dati di mercato." },
+              { t: "Vendita e affitto", d: "Promozione mirata e gestione visite." },
+              { t: "Consulenza mutui", d: "Supporto nella scelta del finanziamento." },
+            ].map((s, i) => (
+              <article key={i} className="card">
+                <div style={{ padding: 18 }}>
+                  <h3 style={{ margin: "0 0 8px" }}>{s.t}</h3>
+                  <p style={{ margin: 0, opacity: 0.9 }}>{s.d}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
       </section>
 
       {/* CONTATTI */}
-      <section id="contatti" className="container section">
-        <h2>Contatti</h2>
-        <p>Scrivici a <a href="mailto:info@myhomeimmobiliare.com">info@myhomeimmobiliare.com</a></p>
+      <section id="contatti" className="main">
+        <section className="container">
+          <h2 style={{ textAlign: "center", marginBottom: 20 }}>Contattaci</h2>
+
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              const fd = new FormData(e.currentTarget);
+              const nome = fd.get("nome");
+              const email = fd.get("email");
+              const msg = fd.get("messaggio");
+              // mailto semplice (puoi sostituire con Formspree / API quando vuoi)
+              const subject = encodeURIComponent("Richiesta informazioni dal sito");
+              const body = encodeURIComponent(`Nome: ${nome}\nEmail: ${email}\n\n${msg}`);
+              window.location.href = `mailto:agenziaimmobiliare.myhome@gmail.com?subject=${subject}&body=${body}`;
+            }}
+            style={{
+              maxWidth: 680,
+              margin: "0 auto",
+              display: "grid",
+              gap: 12
+            }}
+          >
+            <input name="nome" required placeholder="Nome e cognome" />
+            <input name="email" type="email" required placeholder="Email" />
+            <textarea name="messaggio" rows={5} placeholder="Come possiamo aiutarti?" />
+            <button type="submit" className="search-button" style={{ justifySelf: "start" }}>
+              Invia richiesta
+            </button>
+          </form>
+
+          <p style={{ marginTop: 16, opacity: 0.8 }}>
+            Oppure scrivici a <a href="mailto:agenziaimmobiliare.myhome@gmail.com">agenziaimmobiliare.myhome@gmail.com</a>
+          </p>
+        </section>
       </section>
 
-      <footer className="footer">
-        <p>© {new Date().getFullYear()} My Home Immobiliare – Tutti i diritti riservati.</p>
+      <footer style={{ textAlign: "center", padding: "24px 12px", color: "#64748b" }}>
+        <p style={{ margin: 0 }}>© {new Date().getFullYear()} My Home Immobiliare — Tutti i diritti riservati.</p>
       </footer>
     </div>
   );
