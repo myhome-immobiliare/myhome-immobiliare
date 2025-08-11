@@ -1,60 +1,126 @@
-/* ============== Base ============== */
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  color: #0f172a;
-  background: #fff;
+/* ===== NAVBAR ===== */
+.navbar{
+  position: fixed; top: 0; left: 0; right: 0; height: 64px;
+  padding: 0 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(0,0,0,.25);
+  backdrop-filter: saturate(160%) blur(6px);
+  z-index: 50;
 }
 
-/* Evita lo zoom su iOS/Android quando si focus-ano input/select */
-input, select, button { font-size: 16px; }
+.brand img{ height: 36px; display:block; }
 
-/* Link generici (navbar) */
-a { color: inherit; }
+/* Link desktop */
+.nav-links{ display: flex; gap: 24px; }
+.nav-links a{
+  color: #fff; text-decoration: none; font-weight: 600;
+}
+.nav-links a:hover{ text-decoration: underline; }
 
-/* ============== Navbar trasparente ============== */
-.navbar {
-  position: fixed;           /* rimane in alto anche scrollando */
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 20px;
-  color: #fff;
-  /* velo scuro + blur per leggere meglio su hero */
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.35),
-    rgba(0,0,0,0.10)
-  );
+/* Hamburger (mobile) */
+.hamburger{
+  display: none; width: 42px; height: 42px; border: none; background: transparent; cursor: pointer;
+}
+.hamburger span{
+  display:block; height:3px; margin:6px 0; background:#fff; border-radius:2px;
+}
+
+/* Menu mobile */
+@media (max-width: 900px){
+  .hamburger{ display:block; }
+  .nav-links{
+    display:none;
+    position:absolute; top:64px; left:0; right:0;
+    background: rgba(0,0,0,.85);
+    flex-direction: column;
+    padding: 12px 16px;
+    gap: 12px;
+  }
+  .navbar.open .nav-links{ display:flex; }
+}
+
+/* ===== HERO ===== */
+.hero{ margin-top: 64px; } /* separa il contenuto dalla navbar fissa */
+.hero-overlay{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.45)); }
+.hero-inner{ position:relative; z-index:1; padding: 0 16px; }
+.hero-title{
+  font-size: clamp(28px, 6vw, 52px);
+  font-weight: 700;
+  text-shadow: 0 2px 16px rgba(0,0,0,.6);
+  margin: 56px 0 0; /* spazio sotto la navbar su mobile/desktop */
+}
+.hero-sub{
+  margin-top: 12px;
+  font-size: clamp(14px, 3.5vw, 18px);
+  opacity: .95;
+  text-shadow: 0 1px 8px rgba(0,0,0,.5);
+}
+
+/* ===== SEARCH BAR ===== */
+.search{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 10px;
+  width: min(980px, 100%);
+  background: rgba(0,0,0,.35);
+  padding: 12px;
+  border-radius: 12px;
   backdrop-filter: blur(4px);
 }
-.logo { height: 34px; object-fit: contain; }
-.nav-links { display: flex; gap: 22px; }
-.nav-link { color: #fff; text-decoration: none; font-weight: 600; }
-
-/* ============== Hero ============== */
-.hero {
-  position: relative;
-  min-height: 60vh;
-  display: grid;
-  place-items: center;
-  color: #fff;
-  text-align: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.search-select, .search-input{
+  padding: 12px; border-radius: 8px; border: none; font-size: 16px;
+}
+.search-button{
+  background: #0f172a; color: #fff; border: none; border-radius: 8px;
+  padding: 0 18px; font-weight: 700; cursor: pointer;
 }
 
-/* contenitore interno per padding laterale */
-.hero-inner { padding: 0 16px; }
+/* Tablet */
+@media (max-width: 900px){
+  .search{ grid-template-columns: 1fr 1fr; }
+}
 
-/* Titolo – spingi in basso per non sovrapporre la navbar */
-.hero-inner h1 {
-  padding-top: clamp(60px, 12vh, 120px);   /* <-- qui la “protezione” */
-  font-size: clamp(28px, 6vw, 52px);
-  font-weight: 700
+/* Mobile */
+@media (max-width: 600px){
+  .search{ grid-template-columns: 1fr; }
+  .search-button{ height: 44px; }
+}
+
+/* Evita zoom iOS/Android al focus */
+.search-select, .search-input{ padding: 12px !important; font-size: 16px; }
+
+/* ===== LAYOUT / CARDS ===== */
+.main{ padding: 28px 16px 56px; background:#f9fafb; }
+.container{ max-width: 1160px; margin: 0 auto; }
+
+.cards-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+@media (max-width: 900px){
+  .cards-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px){
+  .cards-grid{ grid-template-columns: 1fr; }
+}
+
+.card{
+  border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; background: #fff;
+}
+.card-media{ aspect-ratio: 16/9; background:#f3f4f6; }
+.card-media img{ width:100%; height:100%; object-fit:cover; display:block; }
+.card-body{ padding: 14px; }
+.card-title{ margin: 0 0 6px; font-size: 18px; }
+.card-badge{
+  display:inline-block; background:#0f172a; color:#fff; border-radius:6px; padding:6px 10px;
+  font-size:12px; font-weight:600;
+}
+
+/* Sezioni semplici */
+.section{ padding: 40px 0; }
+.section h2{ margin: 0 0 8px; }
+
+/* Footer */
+.footer{ text-align:center; padding: 24px 12px; color:#64748B; }
