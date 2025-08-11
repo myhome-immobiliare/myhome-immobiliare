@@ -94,12 +94,15 @@ export default function App() {
               <option value="casale">Casale</option>
               <option value="monolocale">Monolocale</option>
             </select>
-
-            <input className="search-input" type="text" placeholder="Città o zona" />
-            <button className="search-button">Cerca</button>
-          </div>
-        </div>
-      </header>
+            <input className="search-input" 
+            type="text" placeholder="Città, 
+              indirizzo o CAP" />
+              <button 
+              className="search-button">Cerca</
+              button>  
+              </div>
+              </div>      
+              </header>
 
       {/* IMMOBILI */}
       <main id="immobili" className="main">
