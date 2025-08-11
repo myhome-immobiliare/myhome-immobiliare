@@ -7,14 +7,11 @@
   backdrop-filter: saturate(160%) blur(6px);
   z-index: 50;
 }
-
 .brand img{ height: 36px; display:block; }
 
-/* Link desktop */
+/* Desktop: link sempre visibili */
 .nav-links{ display: flex; gap: 24px; }
-.nav-links a{
-  color: #fff; text-decoration: none; font-weight: 600;
-}
+.nav-links a{ color: #fff; text-decoration: none; font-weight: 600; }
 .nav-links a:hover{ text-decoration: underline; }
 
 /* Hamburger (mobile) */
@@ -25,7 +22,7 @@
   display:block; height:3px; margin:6px 0; background:#fff; border-radius:2px;
 }
 
-/* Menu mobile */
+/* Dropdown mobile */
 @media (max-width: 900px){
   .hamburger{ display:block; }
   .nav-links{
@@ -33,27 +30,31 @@
     position:absolute; top:64px; left:0; right:0;
     background: rgba(0,0,0,.85);
     flex-direction: column;
-    padding: 12px 16px;
-    gap: 12px;
+    padding: 12px 16px; gap: 12px;
   }
   .navbar.open .nav-links{ display:flex; }
 }
 
 /* ===== HERO ===== */
-.hero{ margin-top: 64px; } /* separa il contenuto dalla navbar fissa */
+.hero{ margin-top: 64px; position: relative; color:#fff; text-align:center; }
 .hero-overlay{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.45)); }
 .hero-inner{ position:relative; z-index:1; padding: 0 16px; }
 .hero-title{
   font-size: clamp(28px, 6vw, 52px);
   font-weight: 700;
   text-shadow: 0 2px 16px rgba(0,0,0,.6);
-  margin: 56px 0 0; /* spazio sotto la navbar su mobile/desktop */
+  margin: 56px 0 0;
 }
 .hero-sub{
   margin-top: 12px;
   font-size: clamp(14px, 3.5vw, 18px);
   opacity: .95;
   text-shadow: 0 1px 8px rgba(0,0,0,.5);
+}
+
+/* Nascondi SOLO su mobile il titolo principale */
+@media (max-width: 600px){
+  .hide-mobile{ display:none; }
 }
 
 /* ===== SEARCH BAR ===== */
@@ -87,9 +88,6 @@
   .search-button{ height: 44px; }
 }
 
-/* Evita zoom iOS/Android al focus */
-.search-select, .search-input{ padding: 12px !important; font-size: 16px; }
-
 /* ===== LAYOUT / CARDS ===== */
 .main{ padding: 28px 16px 56px; background:#f9fafb; }
 .container{ max-width: 1160px; margin: 0 auto; }
@@ -119,8 +117,11 @@
 }
 
 /* Sezioni semplici */
-.section{ padding: 40px 0; }
+.section{ padding: 40px 16px; }
 .section h2{ margin: 0 0 8px; }
 
 /* Footer */
 .footer{ text-align:center; padding: 24px 12px; color:#64748B; }
+
+/* qualità vita */
+html { scroll-behavior: smooth; }
