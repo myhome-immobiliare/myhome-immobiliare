@@ -176,3 +176,61 @@ footer{ text-align:center; padding:24px 12px; color:#64748B; }
   .underbar { padding: 24px 0; }
   .service-card, .contact-card { padding: 20px; }
 }
+/* NAVBAR BASE */
+.navbar{
+  position:absolute; top:0; left:0; right:0;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 16px;
+  background: transparent;
+  z-index:30; /* sopra l'hero */
+}
+
+/* LOGO più grande e reattivo */
+.logo{
+  height: clamp(40px, 6vw, 56px);
+  width:auto; display:block;
+}
+
+/* HAMBURGER senza quadretto bianco */
+.hamburger{
+  background: transparent;
+  border: 0;
+  padding: 6px;
+  border-radius: 8px;
+  line-height: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 16px;           /* rientra un po’ dal bordo destro */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 31;
+}
+.hamburger svg{ display:block; }
+
+/* LINK NAV */
+.nav-links{ display:none; gap:20px; }
+.nav-link{ color:#fff; text-decoration:none; font-weight:600; }
+
+/* DESKTOP: link sempre visibili, hamburger nascosto */
+@media (min-width: 900px){
+  .nav-links{ display:flex; }
+  .hamburger{ display:none; }
+}
+
+/* MOBILE: dropdown */
+@media (max-width: 899px){
+  .nav-links{
+    position: absolute;
+    right: 12px;
+    top: 64px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(6px);
+    padding: 12px;
+    border-radius: 12px;
+  }
+  .nav-links.open{ display:flex; }
+  .nav-link{ color:#fff; }
+}
