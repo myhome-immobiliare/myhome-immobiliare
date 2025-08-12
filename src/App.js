@@ -32,7 +32,7 @@ export default function App() {
           aria-label={menuOpen ? "Chiudi menu" : "Apri menu"}
           onClick={() => setMenuOpen(o => !o)}
         >
-          <span></span><span></span><span></span>
+          <span></span>
         </button>
 
         {menuOpen && (
@@ -51,7 +51,7 @@ export default function App() {
         className="hero"
         style={{
           position: "relative",
-          minHeight: "60vh",
+          minHeight: "70vh",
           display: "grid",
           placeItems: "center",
           color: "#fff",
@@ -63,31 +63,10 @@ export default function App() {
         }}
       >
         <div className="hero-overlay" />
-        <div className="hero-inner" style={{ padding: "0 16px" }}>
-          {/* NASCONDI SOLO SU MOBILE */}
-          <h1
-            className="hero-title hide-mobile"
-            style={{
-              fontSize: "clamp(28px, 6vw, 52px)",
-              fontWeight: 700,
-              textShadow: "0 2px 16px rgba(0,0,0,.6)",
-              margin: 0,
-            }}
-          >
-            Ogni casa una storia. La tua!
-          </h1>
-
-          <p
-            className="hero-sub"
-            style={{
-              marginTop: 12,
-              fontSize: "clamp(14px, 3.5vw, 18px)",
-              opacity: 0.95,
-              textShadow: "0 1px 8px rgba(0,0,0,.5)",
-            }}
-          >
-            Trova subito la tua casa
-          </p>
+        <div className="hero-inner">
+          {/* NASCONDERE SOLO SU MOBILE */}
+          <h1 className="hero-title hide-mobile">Ogni casa una storia. La tua!</h1>
+          <p className="hero-sub">Trova subito la tua casa</p>
 
           {/* SEARCH BAR */}
           <div className="search">
@@ -122,11 +101,10 @@ export default function App() {
           <div className="cards-grid">
             {featured.map((casa, i) => (
               <article key={i} className="card">
-                <div className="card-media" style={{ aspectRatio: "16/9", background: "#f3f4f6" }}>
+                <div className="card-media">
                   <img
                     src={`/${casa.img}`}
                     alt={casa.titolo}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     onError={(e) => { e.currentTarget.src = "/hero.jpg"; }}
                   />
                 </div>
@@ -141,9 +119,50 @@ export default function App() {
       </main>
 
       {/* SERVIZI */}
-      <section id="servizi" className="container section">
-        <h2>Servizi</h2>
-        <p>Valutazioni, compravendite, locazioni, pratiche e consulenze su misura.</p>
+      <section id="servizi" className="services">
+        <div className="container">
+          <h2 className="section-title">I nostri servizi</h2>
+          <p className="section-intro">
+            Supporto completo per vendere, acquistare o affittare con sicurezza e velocità.
+          </p>
+
+          <div className="service-grid">
+            <article className="service-card">
+              <h3>Valutazioni</h3>
+              <p>Stime precise basate su dati di mercato aggiornati.</p>
+            </article>
+
+            <article className="service-card">
+              <h3>Consulenza</h3>
+              <p>Soluzioni su misura per vendita, acquisto e locazione.</p>
+            </article>
+
+            <article className="service-card">
+              <h3>Marketing</h3>
+              <p>Foto professionali e promozione mirata online.</p>
+            </article>
+
+            <article className="service-card">
+              <h3>Pratiche</h3>
+              <p>Gestione documenti, contratti e atti notarili.</p>
+            </article>
+
+            <article className="service-card">
+              <h3>Collaborazioni internazionali</h3>
+              <p>Visibilità all’estero grazie a partnership globali.</p>
+            </article>
+          </div>
+
+          <div className="contact-strip">
+            <h3>Contattaci</h3>
+            <p>
+              <a href="mailto:agenziaimmobiliare.myhome@gmail.com">agenziaimmobiliare.myhome@gmail.com</a><br />
+              <a href="tel:+390735367757">0735 367757</a> • <a href="tel:+393487232091">+39 348 723 2091</a><br />
+              <strong>Via XX Settembre 34, San Benedetto del Tronto (AP)</strong>
+            </p>
+            <a href="#contatti" className="btn-primary">Scrivici ora</a>
+          </div>
+        </div>
       </section>
 
       {/* CONTATTI */}
@@ -152,8 +171,11 @@ export default function App() {
         <p style={{ margin: "8px 0" }}>
           Email: <a href="mailto:agenziaimmobiliare.myhome@gmail.com">agenziaimmobiliare.myhome@gmail.com</a>
         </p>
-        <p style={{ margin: "8px 0" }}>Telefono fisso: 0735 367757</p>
-        <p style={{ margin: "8px 0" }}>Cellulare: +39 348 723 2091</p>
+        <p style={{ margin: "8px 0" }}>Telefono fisso: <a href="tel:+390735367757">0735 367757</a></p>
+        <p style={{ margin: "8px 0" }}>Cellulare: <a href="tel:+393487232091">+39 348 723 2091</a></p>
+        <p style={{ margin: "8px 0" }}>
+          Sede: <strong>Via XX Settembre 34, San Benedetto del Tronto (AP)</strong>
+        </p>
       </section>
 
       <footer style={{ textAlign: "center", padding: "24px 12px", color: "#64748B" }}>
