@@ -3,16 +3,23 @@ import React, { useState } from "react";
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const featured = [
+    { img: "immagine1.jpg", titolo: "Appartamento in centro", info: "€250.000 · 3 camere" },
+    { img: "immagine2.jpg", titolo: "Villa con piscina", info: "€500.000 · 4 camere" },
+    { img: "immagine3.jpg", titolo: "Casale in campagna", info: "€350.000 · 5 camere" },
+    { img: "immagine4.jpg", titolo: "Monolocale ristrutturato", info: "€120.000 · 1 camera" },
+    { img: "immagine5.jpg", titolo: "Attico con terrazza", info: "€450.000 · 3 camere" },
+    { img: "immagine6.jpg", titolo: "Appartamento in periferia", info: "€200.000 · 2 camere" },
+  ];
+
   return (
     <div>
       {/* NAVBAR */}
       <nav className="navbar">
-        {/* Logo */}
         <a href="#home" className="brand" onClick={() => setMenuOpen(false)}>
           <img src="/vettoriale.png" alt="My Home Immobiliare" className="logo" />
         </a>
 
-        {/* Links desktop */}
         <div className="nav-links">
           <a href="#home" className="nav-link">Home</a>
           <a href="#immobili" className="nav-link">Immobili</a>
@@ -20,7 +27,6 @@ export default function App() {
           <a href="#contatti" className="nav-link">Contatti</a>
         </div>
 
-        {/* Hamburger mobile */}
         <button
           className={`hamburger ${menuOpen ? "open" : ""}`}
           aria-label={menuOpen ? "Chiudi menu" : "Apri menu"}
@@ -29,7 +35,6 @@ export default function App() {
           <span></span><span></span><span></span>
         </button>
 
-        {/* Dropdown mobile */}
         {menuOpen && (
           <div className="menu">
             <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
@@ -57,10 +62,9 @@ export default function App() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="hero-overlay"></div>
-
+        <div className="hero-overlay" />
         <div className="hero-inner" style={{ padding: "0 16px" }}>
-          {/* NASCONDERE SOLO SU MOBILE */}
+          {/* NASCONDI SOLO SU MOBILE */}
           <h1
             className="hero-title hide-mobile"
             style={{
@@ -86,20 +90,7 @@ export default function App() {
           </p>
 
           {/* SEARCH BAR */}
-          <div
-            className="search"
-            style={{
-              marginTop: 20,
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr 1fr auto",
-              gap: 10,
-              width: "min(980px, 100%)",
-              background: "rgba(0,0,0,.35)",
-              padding: 12,
-              borderRadius: 12,
-              backdropFilter: "blur(4px)",
-            }}
-          >
+          <div className="search">
             <select className="search-select" defaultValue="vendite">
               <option value="vendite">Vendite</option>
               <option value="affitti">Affitti</option>
@@ -125,28 +116,22 @@ export default function App() {
         </div>
       </header>
 
-      {/* IMMOBILI */}
+      {/* IMMOBILI IN EVIDENZA */}
       <main id="immobili" className="main">
         <section className="container">
           <div className="cards-grid">
-            {[
-              { img: "immagine1.jpg", titolo: "Appartamento in centro", info: "€250.000 · 3 camere" },
-              { img: "immagine2.jpg", titolo: "Villa con piscina", info: "€500.000 · 4 camere" },
-              { img: "immagine3.jpg", titolo: "Casale in campagna", info: "€350.000 · 5 camere" },
-              { img: "immagine4.jpg", titolo: "Monolocale ristrutturato", info: "€120.000 · 1 camera" },
-              { img: "immagine5.jpg", titolo: "Attico con terrazza", info: "€450.000 · 3 camere" },
-              { img: "immagine6.jpg", titolo: "Appartamento in periferia", info: "€200.000 · 2 camere" },
-            ].map((casa, i) => (
+            {featured.map((casa, i) => (
               <article key={i} className="card">
                 <div className="card-media" style={{ aspectRatio: "16/9", background: "#f3f4f6" }}>
                   <img
                     src={`/${casa.img}`}
                     alt={casa.titolo}
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    onError={(e) => { e.currentTarget.src = "/hero.jpg"; }}
                   />
                 </div>
-                <div style={{ padding: 14 }}>
-                  <h3 style={{ margin: "0 0 6px", fontSize: 18 }}>{casa.titolo}</h3>
+                <div className="card-body">
+                  <h3 className="card-title">{casa.titolo}</h3>
                   <p className="card-badge">{casa.info}</p>
                 </div>
               </article>
@@ -156,17 +141,19 @@ export default function App() {
       </main>
 
       {/* SERVIZI */}
-      <section id="servizi" className="container" style={{ padding: "48px 16px" }}>
-        <h2 style={{ margin: "0 0 16px" }}>Servizi</h2>
-        <p>
-          Valutazioni, consulenza mutuo, home staging e gestione pratiche. Contattaci per un preventivo.
-        </p>
+      <section id="servizi" className="container section">
+        <h2>Servizi</h2>
+        <p>Valutazioni, compravendite, locazioni, pratiche e consulenze su misura.</p>
       </section>
 
       {/* CONTATTI */}
-      <section id="contatti" className="container" style={{ padding: "48px 16px" }}>
-        <h2 style={{ margin: "0 0 16px" }}>Contatti</h2>
-        <p>Email: info@myhomeimmobiliare.com · Tel: +39 000 000 000</p>
+      <section id="contatti" className="container section">
+        <h2>Contatti</h2>
+        <p style={{ margin: "8px 0" }}>
+          Email: <a href="mailto:agenziaimmobiliare.myhome@gmail.com">agenziaimmobiliare.myhome@gmail.com</a>
+        </p>
+        <p style={{ margin: "8px 0" }}>Telefono fisso: 0735 367757</p>
+        <p style={{ margin: "8px 0" }}>Cellulare: +39 348 723 2091</p>
       </section>
 
       <footer style={{ textAlign: "center", padding: "24px 12px", color: "#64748B" }}>
