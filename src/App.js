@@ -172,8 +172,8 @@ export default function App() {
           }}
         >
           <p style={{ margin: "0 0 8px" }}>
-            <a href="mailto:agenziaimmobiliare.myhome@gmail.com">
-              agenziaimmobiliare.myhome@gmail.com
+            <a href="mailto:info@myhomeimmobiliare.com">
+              info@myhomeimmobiliare.com
             </a>
             {" • "}
             <a href="tel:+390735367757">0735 367757</a>
