@@ -158,40 +158,53 @@ export default function App() {
         </div>
       </section>
 
-/* FOOTER */
+{/* FOOTER */}
 <footer>
   {/* blocco principale footer */}
-  <div style={{
-    backgroundColor: "#E5E5E0",
-    color: "#2D2D2D",
-    textAlign: "center",
-    padding: "40px 20px"
-  }}>
+  <div
+    style={{
+      backgroundColor: "#E5E5E0",
+      color: "#2D2D2D",
+      textAlign: "center",
+      padding: "40px 20px"
+    }}
+  >
     <h3 style={{ marginTop: 0 }}>My Home Immobiliare</h3>
     <p>Via XX Settembre 34, San Benedetto del Tronto (AP)</p>
     <p>
-      <a href="mailto:info@myhomeimmobiliare.com" style={{ color: "#000", textDecoration: "none" }}>
+      <a
+        href="mailto:info@myhomeimmobiliare.com"
+        style={{ color: "#000", textDecoration: "none" }}
+      >
         info@myhomeimmobiliare.com
       </a>
     </p>
     <p>
-      <a href="tel:+390735367757" style={{ color: "#000", textDecoration: "none" }}>
+      <a
+        href="tel:+390735367757"
+        style={{ color: "#000", textDecoration: "none" }}
+      >
         0735 367757
       </a>{" • "}
-      <a href="tel:+393487232091" style={{ color: "#000", textDecoration: "none" }}>
+      <a
+        href="tel:+393487232091"
+        style={{ color: "#000", textDecoration: "none" }}
+      >
         +39 348 723 2091
       </a>
     </p>
   </div>
 
   {/* fascia bassa */}
-  <div style={{
-    backgroundColor: "#D6CEC2",
-    color: "#555",
-    textAlign: "center",
-    padding: "12px 20px",
-    fontSize: "14px"
-  }}>
+  <div
+    style={{
+      backgroundColor: "#D6CEC2",
+      color: "#555",
+      textAlign: "center",
+      padding: "12px 20px",
+      fontSize: "14px"
+    }}
+  >
     © {new Date().getFullYear()} My Home Immobiliare · Tutti i diritti riservati
   </div>
 </footer>
