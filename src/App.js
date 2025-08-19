@@ -196,7 +196,7 @@ export default function App() {
     </p>
   </div>
 
-  {/* fascia bassa */}
+ {/* fascia bassa */}
   <div
     style={{
       backgroundColor: "#D6CEC2",
@@ -206,6 +206,9 @@ export default function App() {
       fontSize: "14px"
     }}
   >
-    © {new Date().getFullYear()} My Home Immobiliare · Tutti i diritti riservati
+    © {new Date().getFullYear()} My Home Immobiliare - Tutti i diritti riservati
   </div>
 </footer>
+
+</div>  // chiude <div id="home">
+}        // chiude function App
