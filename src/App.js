@@ -158,41 +158,40 @@ export default function App() {
         </div>
       </section>
 
-      {/* CONTATTI */}
-      <section id="contatti" className="container" style={{ padding: "24px 16px 60px" }}>
-        <h2 style={{ textAlign: "center", margin: "0 0 20px" }}>Contattaci</h2>
+/* FOOTER */
+<footer>
+  {/* blocco principale footer */}
+  <div style={{
+    backgroundColor: "#E5E5E0",
+    color: "#2D2D2D",
+    textAlign: "center",
+    padding: "40px 20px"
+  }}>
+    <h3 style={{ marginTop: 0 }}>My Home Immobiliare</h3>
+    <p>Via XX Settembre 34, San Benedetto del Tronto (AP)</p>
+    <p>
+      <a href="mailto:info@myhomeimmobiliare.com" style={{ color: "#000", textDecoration: "none" }}>
+        info@myhomeimmobiliare.com
+      </a>
+    </p>
+    <p>
+      <a href="tel:+390735367757" style={{ color: "#000", textDecoration: "none" }}>
+        0735 367757
+      </a>{" • "}
+      <a href="tel:+393487232091" style={{ color: "#000", textDecoration: "none" }}>
+        +39 348 723 2091
+      </a>
+    </p>
+  </div>
 
-        <div
-          className="card"
-          style={{
-            maxWidth: 680,
-            margin: "0 auto",
-            textAlign: "center",
-            padding: 20,
-          }}
-        >
-          <p style={{ margin: "0 0 8px" }}>
-            <a href="mailto:info@myhomeimmobiliare.com">
-              info@myhomeimmobiliare.com
-            </a>
-            {" • "}
-            <a href="tel:+390735367757">0735 367757</a>
-            {" • "}
-            <a href="tel:+393487232091">+39 348 723 2091</a>
-          </p>
-
-          <p style={{ margin: 0, fontWeight: 600 }}>
-            Via XX Settembre 34, San Benedetto del Tronto (AP)
-          </p>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer style={{ textAlign: "center", padding: "24px 12px", color: "#64748b" }}>
-        <div>
-          © {new Date().getFullYear()} My Home Immobiliare – Tutti i diritti riservati.
-        </div>
-      </footer>
-    </div>
-  );
-}
+  {/* fascia bassa */}
+  <div style={{
+    backgroundColor: "#D6CEC2",
+    color: "#555",
+    textAlign: "center",
+    padding: "12px 20px",
+    fontSize: "14px"
+  }}>
+    © {new Date().getFullYear()} My Home Immobiliare · Tutti i diritti riservati
+  </div>
+</footer>
