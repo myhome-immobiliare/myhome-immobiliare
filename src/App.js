@@ -185,7 +185,8 @@ export default function App() {
         style={{ color: "#000", textDecoration: "none" }}
       >
         0735 367757
-      </a>{" • "}
+      </a>
+      {" • "}
       <a
         href="tel:+393487232091"
         style={{ color: "#000", textDecoration: "none" }}
