@@ -3,14 +3,14 @@ import React, { useState } from "react";
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Annunci vetrina (immagini in /public: immagine1.jpg ... immagine6.jpg)
+  // Annunci vetrina (le immagini devono stare in /public)
   const featured = [
-    { img: "immagine1.jpg", titolo: "Appartamento in centro", info: "€250.000 • 3 camere" },
-    { img: "immagine2.jpg", titolo: "Villa con piscina",      info: "€500.000 • 4 camere" },
-    { img: "immagine3.jpg", titolo: "Casale in campagna",     info: "€350.000 • 5 camere" },
-    { img: "immagine4.jpg", titolo: "Monolocale ristrutturato", info: "€120.000 • 1 camera" },
-    { img: "immagine5.jpg", titolo: "Attico con terrazza",    info: "€450.000 • 3 camere" },
-    { img: "immagine6.jpg", titolo: "Appartamento in periferia", info: "€200.000 • 2 camere" },
+    { img: "immagine1.jpg", titolo: "Appartamento in centro", info: "€250.000 · 3 camere" },
+    { img: "immagine2.jpg", titolo: "Villa con piscina", info: "€500.000 · 4 camere" },
+    { img: "immagine3.jpg", titolo: "Casale in campagna", info: "€350.000 · 5 camere" },
+    { img: "immagine4.jpg", titolo: "Monolocale ristrutturato", info: "€120.000 · 1 camera" },
+    { img: "immagine5.jpg", titolo: "Attico con terrazza", info: "€450.000 · 3 camere" },
+    { img: "immagine6.jpg", titolo: "Appartamento in periferia", info: "€200.000 · 2 camere" }
   ];
 
   return (
@@ -30,8 +30,7 @@ export default function App() {
           onClick={() => setMenuOpen(o => !o)}
         >
           <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 6h16M4 12h16M4 18h16"
-                  stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
           </svg>
         </button>
 
@@ -57,13 +56,13 @@ export default function App() {
           backgroundImage: "url('/hero.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
+          backgroundRepeat: "no-repeat"
         }}
       >
         <div className="hero-overlay" />
         <div className="hero-inner" style={{ padding: "0 16px" }}>
           {/* Su mobile vogliamo solo la frase sotto */}
-          {/* <h1 className="hero-title hide-mobile">Ogni casa una storia. La tua!</h1> */}
+          {/* <h1 className="hero-title hide-mobile">Ogni casa, una storia. La tua!</h1> */}
           <p className="hero-sub">Trova subito la tua casa</p>
 
           {/* SEARCH BAR */}
@@ -158,57 +157,59 @@ export default function App() {
         </div>
       </section>
 
-{/* FOOTER */}
-<footer>
-  {/* blocco principale footer */}
-  <div
-    style={{
-      backgroundColor: "#E5E5E0",
-      color: "#2D2D2D",
-      textAlign: "center",
-      padding: "40px 20px"
-    }}
-  >
-    <h3 style={{ marginTop: 0 }}>My Home Immobiliare</h3>
-    <p>Via XX Settembre 34, San Benedetto del Tronto (AP)</p>
-    <p>
-      <a
-        href="mailto:info@myhomeimmobiliare.com"
-        style={{ color: "#000", textDecoration: "none" }}
-      >
-        info@myhomeimmobiliare.com
-      </a>
-    </p>
-    <p>
-      <a
-        href="tel:+390735367757"
-        style={{ color: "#000", textDecoration: "none" }}
-      >
-        0735 367757
-      </a>
-      {" • "}
-      <a
-        href="tel:+393487232091"
-        style={{ color: "#000", textDecoration: "none" }}
-      >
-        +39 348 723 2091
-      </a>
-    </p>
-  </div>
+      {/* FOOTER (beige) */}
+      <footer id="contatti">
+        {/* blocco principale footer */}
+        <div
+          style={{
+            backgroundColor: "#E5E5E0",
+            color: "#2D2D2D",
+            textAlign: "center",
+            padding: "40px 20px"
+          }}
+        >
+          <h3 style={{ marginTop: 0 }}>My Home Immobiliare</h3>
+          <p style={{ margin: "6px 0" }}>Via XX Settembre 34, San Benedetto del Tronto (AP)</p>
 
- {/* fascia bassa */}
-  <div
-    style={{
-      backgroundColor: "#D6CEC2",
-      color: "#555",
-      textAlign: "center",
-      padding: "12px 20px",
-      fontSize: "14px"
-    }}
-  >
-    © {new Date().getFullYear()} My Home Immobiliare - Tutti i diritti riservati
-  </div>
-</footer>
+          <p style={{ margin: "6px 0" }}>
+            <a
+              href="mailto:info@myhomeimmobiliare.com"
+              style={{ color: "#000", textDecoration: "none" }}
+            >
+              info@myhomeimmobiliare.com
+            </a>
+          </p>
 
-</div>  // chiude <div id="home">
-}        // chiude function App
+          <p style={{ margin: "6px 0" }}>
+            <a
+              href="tel:+390735367757"
+              style={{ color: "#000", textDecoration: "none" }}
+            >
+              0735 367757
+            </a>{" "}
+            •{" "}
+            <a
+              href="tel:+393487232091"
+              style={{ color: "#000", textDecoration: "none" }}
+            >
+              +39 348 723 2091
+            </a>
+          </p>
+        </div>
+
+        {/* fascia bassa */}
+        <div
+          style={{
+            backgroundColor: "#D6CEC2",
+            color: "#555",
+            textAlign: "center",
+            padding: "12px 20px",
+            fontSize: "14px"
+          }}
+        >
+          © {new Date().getFullYear()} My Home Immobiliare - Tutti i diritti riservati
+        </div>
+      </footer>
+    </div>
+  );
+}
