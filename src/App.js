@@ -1227,7 +1227,7 @@ export default function App() {
       </main>
 
 
-      {/* SERVIZI */}
+            {/* SERVIZI */}
 
       <section
         id="servizi"
@@ -1375,10 +1375,72 @@ export default function App() {
 
           </article>
 
+
+          <article className="card">
+
+            <div
+              style={{
+                padding: 18
+              }}
+            >
+
+              <h3
+                style={{
+                  marginTop: 0
+                }}
+              >
+                Offerta locazioni
+              </h3>
+
+              <p
+                style={{
+                  marginBottom: 0
+                }}
+              >
+                Gestione e promozione di immobili in affitto,
+                dalla ricerca dell'inquilino alla documentazione
+                e al contratto.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article className="card">
+
+            <div
+              style={{
+                padding: 18
+              }}
+            >
+
+              <h3
+                style={{
+                  marginTop: 0
+                }}
+              >
+                Assistenza partecipazione aste
+              </h3>
+
+              <p
+                style={{
+                  marginBottom: 0
+                }}
+              >
+                Supporto nella partecipazione alle aste immobiliari,
+                dalla verifica della documentazione alle diverse
+                fasi della procedura.
+              </p>
+
+            </div>
+
+          </article>
+
+
         </div>
 
       </section>
-
 
       {/* FOOTER */}
 
