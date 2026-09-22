@@ -5,6 +5,11 @@ import React, { useState } from "react";
    ========================================================= */
 
 const properties = {
+
+  /* =======================================================
+     DIMORA BELVEDERE
+     ======================================================= */
+
   "dimora-belvedere": {
     id: "dimora-belvedere",
     title: "Dimora Belvedere",
@@ -76,6 +81,13 @@ const properties = {
         paragraphs: [
           "La proprietà è circondata da spazi esterni privati e dispone di una piscina panoramica, ideale per vivere all'aperto e godere della tranquillità del paesaggio marchigiano."
         ]
+      },
+      {
+        title: "La posizione",
+        paragraphs: [
+          "La proprietà si trova a Montalto delle Marche, in provincia di Ascoli Piceno, in una posizione panoramica e tranquilla nel cuore delle Marche.",
+          "Il Parco Nazionale dei Monti Sibillini è raggiungibile in circa 45 minuti, mentre gli aeroporti di Ancona e Pescara distano circa un'ora."
+        ]
       }
     ],
 
@@ -89,13 +101,13 @@ const properties = {
       "Garage di circa 31 m²",
       "Balconi e terrazza panoramica",
       "Vista sui Monti Sibillini"
-    ],
-
-    position: [
-      "La proprietà si trova a Montalto delle Marche, in provincia di Ascoli Piceno, in una posizione panoramica e tranquilla nel cuore delle Marche.",
-      "Il Parco Nazionale dei Monti Sibillini è raggiungibile in circa 45 minuti, mentre gli aeroporti di Ancona e Pescara distano circa un'ora."
     ]
   },
+
+
+  /* =======================================================
+     APPARTAMENTO SAN BENEDETTO
+     ======================================================= */
 
   "appartamento-san-benedetto": {
     id: "appartamento-san-benedetto",
@@ -130,74 +142,153 @@ const properties = {
       {
         title: "La proprietà",
         paragraphs: [
-          "Se desideri una casa moderna, efficiente e pronta da abitare, questa proposta rappresenta un perfetto equilibrio tra comfort, qualità costruttiva e posizione.",
-          "Situato in una zona tranquilla e residenziale, appena al di sopra della Nazionale Adriatica, questo elegante appartamento di circa 100 m² si trova al primo piano servito da ascensore, all'interno di una recente palazzina composta da sole sei unità abitative, in un contesto riservato e ben curato.",
-          "L'ingresso si apre su un'ampia zona giorno open space con soggiorno e cucina a vista, un ambiente luminoso e accogliente grazie alle grandi aperture verso l'esterno."
+          "In vendita a San Benedetto del Tronto, elegante appartamento di recente costruzione, inserito in un piccolo edificio composto da sole sei unità.",
+          "L'immobile si trova al primo piano con ascensore e offre ambienti moderni, funzionali e caratterizzati da finiture di qualità.",
+          "La classe energetica A4 garantisce elevati standard di efficienza energetica e comfort abitativo."
         ]
       },
       {
-        title: "Gli ambienti",
+        title: "Gli spazi",
         paragraphs: [
-          "La distribuzione degli spazi offre inoltre la possibilità di ricavare una terza stanza, come illustrato nell'ipotesi progettuale allegata, proposta a titolo puramente esemplificativo.",
-          "La soluzione potrà essere valutata e sviluppata secondo le esigenze dell'acquirente e nel rispetto della normativa vigente.",
-          "La zona notte è ben separata e comprende due camere matrimoniali, due bagni finestrati, di cui uno privato nella camera padronale, e una pratica cabina armadio."
+          "L'abitazione dispone di due camere matrimoniali, due bagni di cui uno en suite e una comoda cabina armadio.",
+          "La distribuzione degli ambienti permette inoltre, secondo un progetto illustrativo, la possibilità di ricavare una terza camera.",
+          "Completano la proprietà due balconi che ampliano gli spazi abitativi verso l'esterno."
         ]
       },
       {
-        title: "Gli spazi esterni",
+        title: "Finiture e dotazioni",
         paragraphs: [
-          "Completano la proprietà due balconi abitabili, ideali per pranzi all'aperto, momenti di relax o semplicemente per godere di spazi esterni vivibili."
-        ]
-      },
-      {
-        title: "Qualità e dotazioni",
-        paragraphs: [
-          "L'immobile si distingue per l'elevata qualità delle finiture: riscaldamento a pavimento, pavimenti in gres porcellanato, infissi in alluminio con doppio vetro, videocitofono, impianti certificati e porte interne di design.",
-          "La classe energetica A4 garantisce consumi ridotti, massimo comfort abitativo e un importante valore aggiunto nel tempo."
+          "L'appartamento è dotato di riscaldamento a pavimento, pavimentazione in gres porcellanato, infissi in alluminio con doppio vetro, videocitofono, impianti certificati e porte interne dal design moderno."
         ]
       },
       {
         title: "Garage",
         paragraphs: [
-          "È inoltre possibile acquistare separatamente un comodo garage al piano seminterrato, facilmente accessibile direttamente dal fabbricato."
+          "È disponibile separatamente un garage, ideale per completare la proprietà con uno spazio privato per auto e deposito."
         ]
       },
       {
         title: "La posizione",
         paragraphs: [
-          "La posizione rappresenta uno dei principali punti di forza: una zona tranquilla e residenziale, a pochi minuti dal mare, vicina a tutti i servizi principali e con un curato parco pubblico nelle immediate vicinanze, ideale per famiglie e per chi ama vivere gli spazi all'aperto.",
-          "Una soluzione perfetta per chi cerca una casa recente, elegante, efficiente e pronta da vivere, senza dover affrontare lavori di ristrutturazione."
-        ]
-      },
-      {
-        title: "Nota sulle immagini",
-        paragraphs: [
-          "Alcune immagini con arredamento sono render a scopo puramente illustrativo e hanno l'obiettivo di mostrare alcune possibili soluzioni di interior design e valorizzare il potenziale degli ambienti."
+          "L'appartamento è situato in una tranquilla zona residenziale di San Benedetto del Tronto, a pochi minuti dal mare e vicino ai principali servizi e a un'area verde.",
+          "Le immagini relative alla possibile distribuzione degli ambienti sono da considerarsi illustrative."
         ]
       }
     ],
 
     features: [
       "Classe energetica A4",
-      "Circa 100 m²",
+      "100 m²",
       "Primo piano con ascensore",
       "Due camere matrimoniali",
-      "Possibilità di ricavare una terza stanza",
-      "Due bagni finestrati",
-      "Bagno privato nella camera padronale",
+      "Possibilità di terza camera",
+      "Due bagni",
+      "Bagno en suite",
       "Cabina armadio",
-      "Due balconi abitabili",
+      "Due balconi",
       "Riscaldamento a pavimento",
       "Gres porcellanato",
       "Infissi in alluminio con doppio vetro",
       "Videocitofono",
       "Impianti certificati",
       "Porte interne di design",
-      "Garage acquistabile separatamente"
+      "Garage disponibile separatamente"
+    ]
+  },
+
+
+  /* =======================================================
+     CASALE COSSIGNANO
+     ======================================================= */
+
+  "casale-cossignano": {
+    id: "casale-cossignano",
+    title: "Casale vista mare",
+    location: "Cossignano · Ascoli Piceno",
+    price: "€370.000",
+    subtitle: "Casale in mattoni ristrutturato · 4,7 ettari",
+    cover: "20250930_092911.jpg",
+
+    stats: [
+      ["250 m²", "Superficie"],
+      ["12", "Locali"],
+      ["3", "Camere"],
+      ["1", "Bagno"],
+      ["47.000 m²", "Terreno"],
+      ["2", "Piani"]
     ],
 
-    position: []
+    images: [
+      "20250930_092911.jpg",
+      "20250930_092934.jpg",
+      "20250930_093100.jpg",
+      "20250930_093314.jpg",
+      "20250930_093530.jpg",
+      "20250930_104022.jpg",
+      "20250930_104127.jpg",
+      "20250930_104221.jpg",
+      "20250930_104302.jpg"
+    ],
+
+    sections: [
+      {
+        title: "La proprietà",
+        paragraphs: [
+          "In splendida posizione panoramica, con vista mare e sulle colline marchigiane, proponiamo in vendita un caratteristico casale in mattoni recentemente ristrutturato con cura, circondato da un ampio terreno agricolo di circa 4,7 ettari.",
+          "L'immobile mantiene intatto il fascino della tradizione rurale marchigiana grazie ai soffitti con travi a vista, ai pavimenti in parquet, agli infissi in legno con doppi vetri e alle finiture curate.",
+          "Una proprietà dal grande potenziale, ideale per chi desidera vivere nella tranquillità della campagna marchigiana senza rinunciare alla vicinanza al mare."
+        ]
+      },
+      {
+        title: "Gli spazi",
+        paragraphs: [
+          "Il piano primo, destinato alla zona abitativa, comprende ingresso, soggiorno, cucina abitabile, tre camere da letto, bagno e magazzino.",
+          "Uno dei punti di forza della proprietà è l'ampio terrazzo panoramico, collegato al portico e ideale per pranzi e cene all'aperto.",
+          "Al piano terra si trovano quattro ampi vani rifiniti in mattoni, già dotati di impianti e da completare secondo le proprie esigenze.",
+          "Completano il piano terra ampi spazi destinati a garage, deposito e rimessa."
+        ]
+      },
+      {
+        title: "Gli esterni",
+        paragraphs: [
+          "La proprietà comprende un cortile e un giardino privato piantumato con alberi ad alto fusto, che garantiscono privacy e tranquillità.",
+          "Il terreno agricolo di circa 4,7 ettari è suddiviso tra seminativo e bosco misto e offre ampie possibilità per attività agricole, allevamento, vigneto, uliveto oppure semplicemente per vivere la natura."
+        ]
+      },
+      {
+        title: "Potenzialità",
+        paragraphs: [
+          "Grazie agli ampi spazi interni ed esterni, la proprietà si presta sia come residenza privata di charme sia come casa vacanze o struttura ricettiva.",
+          "La distribuzione degli ambienti permette inoltre diverse possibilità di personalizzazione e sviluppo."
+        ]
+      },
+      {
+        title: "La posizione",
+        paragraphs: [
+          "Il casale gode di una posizione collinare, panoramica e riservata, con servizi e negozi raggiungibili anche a piedi.",
+          "L'accesso è comodo da strada comunale asfaltata.",
+          "Il mare è raggiungibile in circa 20 minuti, la montagna in circa 40 minuti e l'autostrada A14 in circa 20 minuti."
+        ]
+      }
+    ],
+
+    features: [
+      "Casale in mattoni recentemente ristrutturato",
+      "Vista mare e colline marchigiane",
+      "Circa 4,7 ettari di terreno",
+      "Terreno con seminativo e bosco misto",
+      "Tre camere da letto",
+      "Ampio terrazzo panoramico",
+      "Portico",
+      "Giardino privato",
+      "Quattro vani accessori da rifinire",
+      "Garage e depositi",
+      "Camino",
+      "Riscaldamento autonomo a gas naturale",
+      "Box doppio compreso nel prezzo"
+    ]
   }
+
 };
 
 
@@ -215,28 +306,14 @@ const featured = [
   {
     img: "20260420_112105.jpg",
     titolo: "Appartamento moderno",
-    info: "€360.000 · 100 m² · 2-3 camere",
+    info: "€360.000 · 100 m² · Classe A4",
     property: "appartamento-san-benedetto"
   },
   {
-    img: "immagine3.jpg",
-    titolo: "Casale in campagna",
-    info: "€350.000 · 5 camere"
-  },
-  {
-    img: "immagine4.jpg",
-    titolo: "Monolocale ristrutturato",
-    info: "€120.000 · 1 camera"
-  },
-  {
-    img: "immagine5.jpg",
-    titolo: "Attico con terrazza",
-    info: "€450.000 · 3 camere"
-  },
-  {
-    img: "immagine6.jpg",
-    titolo: "Appartamento in periferia",
-    info: "€200.000 · 2 camere"
+    img: "20250930_092911.jpg",
+    titolo: "Casale vista mare",
+    info: "€370.000 · 250 m² · 4,7 ettari",
+    property: "casale-cossignano"
   }
 ];
 
@@ -245,16 +322,25 @@ const featured = [
    NAVBAR
    ========================================================= */
 
-function Navbar({ menuOpen, setMenuOpen, onHome, propertyPage = false }) {
+function Navbar({
+  menuOpen,
+  setMenuOpen,
+  setSelectedProperty
+}) {
   return (
     <nav className="navbar">
 
       <a
         href="#home"
         className="brand"
-        onClick={(e) => {
-          e.preventDefault();
-          onHome();
+        onClick={() => {
+          setSelectedProperty(null);
+          setMenuOpen(false);
+
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
         }}
       >
         <img
@@ -266,9 +352,13 @@ function Navbar({ menuOpen, setMenuOpen, onHome, propertyPage = false }) {
 
       <button
         className="hamburger"
-        aria-label={menuOpen ? "Chiudi menu" : "Apri menu"}
+        aria-label={
+          menuOpen ? "Chiudi menu" : "Apri menu"
+        }
         aria-expanded={menuOpen}
-        onClick={() => setMenuOpen(o => !o)}
+        onClick={() =>
+          setMenuOpen(o => !o)
+        }
       >
         <svg
           width="28"
@@ -285,61 +375,54 @@ function Navbar({ menuOpen, setMenuOpen, onHome, propertyPage = false }) {
         </svg>
       </button>
 
-      <div className={`nav-links ${menuOpen ? "open" : ""}`}>
+      <div
+        className={`nav-links ${
+          menuOpen ? "open" : ""
+        }`}
+      >
 
         <a
           href="#home"
           className="nav-link"
-          onClick={(e) => {
-            e.preventDefault();
-            onHome();
+          onClick={() => {
+            setSelectedProperty(null);
+            setMenuOpen(false);
+
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
           }}
         >
           Home
         </a>
 
         <a
-          href={propertyPage ? "#immobile" : "#immobili"}
+          href="#immobili"
           className="nav-link"
           onClick={() => {
             setMenuOpen(false);
 
-            if (propertyPage) {
-              setTimeout(() => {
-                document
-                  .getElementById("immobile")
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }, 50);
+            if (setSelectedProperty) {
+              setSelectedProperty(null);
             }
           }}
         >
-          {propertyPage ? "Immobile" : "Immobili"}
+          Immobili
         </a>
 
-        {!propertyPage && (
-          <a
-            href="#servizi"
-            className="nav-link"
-            onClick={() => setMenuOpen(false)}
-          >
-            Servizi
-          </a>
-        )}
+        <a
+          href="#servizi"
+          className="nav-link"
+          onClick={() => setMenuOpen(false)}
+        >
+          Servizi
+        </a>
 
         <a
           href="#contatti"
           className="nav-link"
-          onClick={() => {
-            setMenuOpen(false);
-
-            if (propertyPage) {
-              setTimeout(() => {
-                document
-                  .getElementById("contatti")
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }, 50);
-            }
-          }}
+          onClick={() => setMenuOpen(false)}
         >
           Contatti
         </a>
@@ -351,397 +434,12 @@ function Navbar({ menuOpen, setMenuOpen, onHome, propertyPage = false }) {
 
 
 /* =========================================================
-   PAGINA IMMOBILE RIUTILIZZABILE
-   ========================================================= */
-
-function PropertyPage({
-  property,
-  menuOpen,
-  setMenuOpen,
-  onHome,
-  onBack
-}) {
-  return (
-    <div id="home">
-
-      <Navbar
-        menuOpen={menuOpen}
-        setMenuOpen={setMenuOpen}
-        onHome={onHome}
-        propertyPage
-      />
-
-      {/* HERO IMMOBILE */}
-      <header
-        style={{
-          position: "relative",
-          minHeight: "65vh",
-          display: "grid",
-          placeItems: "center",
-          color: "#fff",
-          textAlign: "center",
-          backgroundImage: `url("${encodeURI(
-            `/${property.cover}`
-          )}")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat"
-        }}
-      >
-
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.58))"
-          }}
-        />
-
-        <div
-          style={{
-            position: "relative",
-            zIndex: 2,
-            padding: "100px 20px 40px",
-            maxWidth: "900px"
-          }}
-        >
-
-          <p
-            style={{
-              fontSize: "15px",
-              letterSpacing: "2px",
-              textTransform: "uppercase",
-              marginBottom: "12px"
-            }}
-          >
-            My Home Immobiliare
-          </p>
-
-          <h1
-            style={{
-              fontSize: "clamp(36px, 6vw, 64px)",
-              margin: "0 0 12px",
-              fontWeight: 600
-            }}
-          >
-            {property.title}
-          </h1>
-
-          <p
-            style={{
-              fontSize: "20px",
-              margin: 0
-            }}
-          >
-            {property.location}
-          </p>
-
-        </div>
-      </header>
-
-
-      {/* CONTENUTO */}
-      <main id="immobile">
-
-        <section
-          style={{
-            maxWidth: "1100px",
-            margin: "0 auto",
-            padding: "45px 20px 25px"
-          }}
-        >
-
-          {/* PREZZO */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "20px",
-              flexWrap: "wrap",
-              marginBottom: "30px"
-            }}
-          >
-
-            <div>
-
-              <div
-                style={{
-                  fontSize: "32px",
-                  fontWeight: 700,
-                  marginBottom: "8px"
-                }}
-              >
-                {property.price}
-              </div>
-
-              <div style={{ color: "#666" }}>
-                {property.subtitle}
-              </div>
-
-            </div>
-
-            <button
-              onClick={() =>
-                document
-                  .getElementById("contatti")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-              style={{
-                border: "none",
-                background: "#2D2D2D",
-                color: "#fff",
-                padding: "14px 24px",
-                borderRadius: "8px",
-                fontSize: "16px",
-                cursor: "pointer"
-              }}
-            >
-              Richiedi informazioni
-            </button>
-
-          </div>
-
-
-          {/* CARATTERISTICHE */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns:
-                "repeat(auto-fit, minmax(130px, 1fr))",
-              gap: "12px",
-              marginBottom: "50px"
-            }}
-          >
-
-            {property.stats.map((stat, index) => (
-              <div
-                className="card"
-                style={{ padding: "18px" }}
-                key={index}
-              >
-                <strong>{stat[0]}</strong>
-                <div>{stat[1]}</div>
-              </div>
-            ))}
-
-          </div>
-
-
-          {/* GALLERIA */}
-          <section style={{ marginBottom: "55px" }}>
-
-            <h2
-              style={{
-                fontSize: "30px",
-                marginBottom: "25px"
-              }}
-            >
-              Galleria
-            </h2>
-
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns:
-                  "repeat(auto-fit, minmax(220px, 1fr))",
-                gap: "12px"
-              }}
-            >
-
-              {property.images.map((img, index) => (
-                <div
-                  key={index}
-                  style={{
-                    aspectRatio: "4/3",
-                    overflow: "hidden",
-                    borderRadius: "10px",
-                    background: "#eee"
-                  }}
-                >
-
-                  <img
-                    src={`/${encodeURI(img)}`}
-                    alt={`${property.title} - foto ${index + 1}`}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      display: "block"
-                    }}
-                  />
-
-                </div>
-              ))}
-
-            </div>
-
-          </section>
-
-
-          {/* SEZIONI DESCRITTIVE */}
-          {property.sections.map((section, index) => (
-            <section
-              key={index}
-              style={{ marginBottom: "45px" }}
-            >
-
-              <h2 style={{ fontSize: "30px" }}>
-                {section.title}
-              </h2>
-
-              {section.paragraphs.map((paragraph, pIndex) => (
-                <p
-                  key={pIndex}
-                  style={{
-                    fontSize: "17px",
-                    lineHeight: 1.8,
-                    color: "#444"
-                  }}
-                >
-                  {paragraph}
-                </p>
-              ))}
-
-            </section>
-          ))}
-
-
-          {/* CARATTERISTICHE */}
-          <section style={{ marginBottom: "45px" }}>
-
-            <h2 style={{ fontSize: "30px" }}>
-              Caratteristiche
-            </h2>
-
-            <ul
-              style={{
-                lineHeight: 2,
-                color: "#444",
-                paddingLeft: "20px"
-              }}
-            >
-
-              {property.features.map((feature, index) => (
-                <li key={index}>
-                  {feature}
-                </li>
-              ))}
-
-            </ul>
-
-          </section>
-
-
-          {/* CONTATTI */}
-          <section
-            id="contatti"
-            style={{
-              background: "#E5E5E0",
-              borderRadius: "14px",
-              padding: "40px 25px",
-              textAlign: "center",
-              marginBottom: "50px"
-            }}
-          >
-
-            <h2 style={{ marginTop: 0 }}>
-              Ti interessa {property.title}?
-            </h2>
-
-            <p
-              style={{
-                fontSize: "17px",
-                color: "#555",
-                marginBottom: "25px"
-              }}
-            >
-              Contattaci per ricevere maggiori informazioni
-              o per organizzare una visita.
-            </p>
-
-            <p style={{ margin: "8px 0" }}>
-              <strong>Telefono:</strong>{" "}
-              <a href="tel:+390735367757">
-                0735 367757
-              </a>
-            </p>
-
-            <p style={{ margin: "8px 0" }}>
-              <strong>Cellulare:</strong>{" "}
-              <a href="tel:+393487232091">
-                +39 348 723 2091
-              </a>
-            </p>
-
-            <p style={{ margin: "8px 0" }}>
-              <strong>Email:</strong>{" "}
-              <a href="mailto:info@myhomeimmobiliare.com">
-                info@myhomeimmobiliare.com
-              </a>
-            </p>
-
-            <p
-              style={{
-                marginTop: "18px",
-                fontWeight: 600
-              }}
-            >
-              My Home Immobiliare
-              <br />
-              Via XX Settembre 34,
-              San Benedetto del Tronto (AP)
-            </p>
-
-          </section>
-
-
-          {/* TORNA AGLI IMMOBILI */}
-          <div
-            style={{
-              textAlign: "center",
-              paddingBottom: "50px"
-            }}
-          >
-
-            <button
-              onClick={onBack}
-              style={{
-                border: "1px solid #555",
-                background: "#fff",
-                color: "#333",
-                padding: "12px 22px",
-                borderRadius: "8px",
-                cursor: "pointer",
-                fontSize: "15px"
-              }}
-            >
-              ← Torna agli immobili
-            </button>
-
-          </div>
-
-        </section>
-
-      </main>
-
-
-      {/* FOOTER */}
-      <Footer />
-
-    </div>
-  );
-}
-
-
-/* =========================================================
    FOOTER
    ========================================================= */
 
 function Footer() {
   return (
-    <footer>
+    <footer id="contatti">
 
       <div
         style={{
@@ -820,40 +518,465 @@ function Footer() {
 
 
 /* =========================================================
+   PAGINA IMMOBILE
+   ========================================================= */
+
+function PropertyPage({
+  property,
+  setSelectedProperty,
+  menuOpen,
+  setMenuOpen
+}) {
+  return (
+    <div id="home">
+
+      <Navbar
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+        setSelectedProperty={setSelectedProperty}
+      />
+
+      {/* HERO IMMOBILE */}
+
+      <header
+        style={{
+          position: "relative",
+          minHeight: "65vh",
+          display: "grid",
+          placeItems: "center",
+          color: "#fff",
+          textAlign: "center",
+          backgroundImage:
+            `url('${encodeURI(
+              "/" + property.cover
+            )}')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
+        }}
+      >
+
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.58))"
+          }}
+        />
+
+        <div
+          style={{
+            position: "relative",
+            zIndex: 2,
+            padding: "100px 20px 40px",
+            maxWidth: "900px"
+          }}
+        >
+
+          <p
+            style={{
+              fontSize: "15px",
+              letterSpacing: "2px",
+              textTransform: "uppercase",
+              marginBottom: "12px"
+            }}
+          >
+            My Home Immobiliare
+          </p>
+
+          <h1
+            style={{
+              fontSize: "clamp(36px, 6vw, 64px)",
+              margin: "0 0 12px",
+              fontWeight: 600
+            }}
+          >
+            {property.title}
+          </h1>
+
+          <p
+            style={{
+              fontSize: "20px",
+              margin: 0
+            }}
+          >
+            {property.location}
+          </p>
+
+        </div>
+      </header>
+
+
+      {/* CONTENUTO IMMOBILE */}
+
+      <main id="immobile">
+
+        <section
+          style={{
+            maxWidth: "1100px",
+            margin: "0 auto",
+            padding: "45px 20px 25px"
+          }}
+        >
+
+          {/* PREZZO */}
+
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: "20px",
+              flexWrap: "wrap",
+              marginBottom: "30px"
+            }}
+          >
+
+            <div>
+
+              <div
+                style={{
+                  fontSize: "32px",
+                  fontWeight: 700,
+                  marginBottom: "8px"
+                }}
+              >
+                {property.price}
+              </div>
+
+              <div style={{ color: "#666" }}>
+                {property.subtitle}
+              </div>
+
+            </div>
+
+            <button
+              onClick={() =>
+                document
+                  .getElementById("contatti")
+                  ?.scrollIntoView({
+                    behavior: "smooth"
+                  })
+              }
+              style={{
+                border: "none",
+                background: "#2D2D2D",
+                color: "#fff",
+                padding: "14px 24px",
+                borderRadius: "8px",
+                fontSize: "16px",
+                cursor: "pointer"
+              }}
+            >
+              Richiedi informazioni
+            </button>
+
+          </div>
+
+
+          {/* CARATTERISTICHE */}
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns:
+                "repeat(auto-fit, minmax(130px, 1fr))",
+              gap: "12px",
+              marginBottom: "50px"
+            }}
+          >
+
+            {property.stats.map(
+              (stat, index) => (
+                <div
+                  key={index}
+                  className="card"
+                  style={{
+                    padding: "18px"
+                  }}
+                >
+                  <strong>
+                    {stat[0]}
+                  </strong>
+
+                  <div>
+                    {stat[1]}
+                  </div>
+                </div>
+              )
+            )}
+
+          </div>
+
+
+          {/* GALLERIA */}
+
+          <section
+            style={{
+              marginBottom: "55px"
+            }}
+          >
+
+            <h2
+              style={{
+                fontSize: "30px",
+                marginBottom: "25px"
+              }}
+            >
+              Galleria
+            </h2>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns:
+                  "repeat(auto-fit, minmax(220px, 1fr))",
+                gap: "12px"
+              }}
+            >
+
+              {property.images.map(
+                (img, index) => (
+
+                  <div
+                    key={index}
+                    style={{
+                      aspectRatio: "4/3",
+                      overflow: "hidden",
+                      borderRadius: "10px",
+                      background: "#eee"
+                    }}
+                  >
+
+                    <img
+                      src={`/${encodeURI(img)}`}
+                      alt={`${property.title} - foto ${index + 1}`}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        display: "block"
+                      }}
+                    />
+
+                  </div>
+
+                )
+              )}
+
+            </div>
+
+          </section>
+
+
+          {/* DESCRIZIONI */}
+
+          {property.sections.map(
+            (section, index) => (
+
+              <section
+                key={index}
+                style={{
+                  marginBottom: "45px"
+                }}
+              >
+
+                <h2
+                  style={{
+                    fontSize: "30px"
+                  }}
+                >
+                  {section.title}
+                </h2>
+
+                {section.paragraphs.map(
+                  (paragraph, paragraphIndex) => (
+
+                    <p
+                      key={paragraphIndex}
+                      style={{
+                        fontSize: "17px",
+                        lineHeight: 1.8,
+                        color: "#444"
+                      }}
+                    >
+                      {paragraph}
+                    </p>
+
+                  )
+                )}
+
+              </section>
+
+            )
+          )}
+
+
+          {/* CARATTERISTICHE */}
+
+          <section
+            style={{
+              marginBottom: "55px"
+            }}
+          >
+
+            <h2
+              style={{
+                fontSize: "30px"
+              }}
+            >
+              Caratteristiche
+            </h2>
+
+            <ul
+              style={{
+                lineHeight: 2,
+                color: "#444",
+                paddingLeft: "20px"
+              }}
+            >
+
+              {property.features.map(
+                (feature, index) => (
+                  <li key={index}>
+                    {feature}
+                  </li>
+                )
+              )}
+
+            </ul>
+
+          </section>
+
+
+          {/* CONTATTI IMMOBILE */}
+
+          <section
+            id="contatti"
+            style={{
+              background: "#E5E5E0",
+              borderRadius: "14px",
+              padding: "40px 25px",
+              textAlign: "center",
+              marginBottom: "50px"
+            }}
+          >
+
+            <h2 style={{ marginTop: 0 }}>
+              Ti interessa {property.title}?
+            </h2>
+
+            <p
+              style={{
+                fontSize: "17px",
+                color: "#555",
+                marginBottom: "25px"
+              }}
+            >
+              Contattaci per ricevere maggiori
+              informazioni o per organizzare una visita.
+            </p>
+
+            <p style={{ margin: "8px 0" }}>
+              <strong>Telefono:</strong>{" "}
+              <a href="tel:+390735367757">
+                0735 367757
+              </a>
+            </p>
+
+            <p style={{ margin: "8px 0" }}>
+              <strong>Cellulare:</strong>{" "}
+              <a href="tel:+393487232091">
+                +39 348 723 2091
+              </a>
+            </p>
+
+            <p style={{ margin: "8px 0" }}>
+              <strong>Email:</strong>{" "}
+              <a href="mailto:info@myhomeimmobiliare.com">
+                info@myhomeimmobiliare.com
+              </a>
+            </p>
+
+            <p
+              style={{
+                marginTop: "18px",
+                fontWeight: 600
+              }}
+            >
+              My Home Immobiliare
+              <br />
+              Via XX Settembre 34,
+              San Benedetto del Tronto (AP)
+            </p>
+
+          </section>
+
+
+          {/* TORNA AGLI IMMOBILI */}
+
+          <div
+            style={{
+              textAlign: "center",
+              paddingBottom: "50px"
+            }}
+          >
+
+            <button
+              onClick={() => {
+                setSelectedProperty(null);
+
+                setTimeout(() => {
+                  document
+                    .getElementById("immobili")
+                    ?.scrollIntoView({
+                      behavior: "smooth"
+                    });
+                }, 100);
+              }}
+              style={{
+                border: "1px solid #555",
+                background: "#fff",
+                color: "#333",
+                padding: "12px 22px",
+                borderRadius: "8px",
+                cursor: "pointer",
+                fontSize: "15px"
+              }}
+            >
+              ← Torna agli immobili
+            </button>
+
+          </div>
+
+        </section>
+
+      </main>
+
+
+      <Footer />
+
+    </div>
+  );
+}
+
+
+/* =========================================================
    APP
    ========================================================= */
 
 export default function App() {
 
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [selectedProperty, setSelectedProperty] = useState(null);
+  const [
+    menuOpen,
+    setMenuOpen
+  ] = useState(false);
 
-
-  const goHome = () => {
-    setSelectedProperty(null);
-    setMenuOpen(false);
-
-    setTimeout(() => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    }, 50);
-  };
-
-
-  const goBackToProperties = () => {
-    setSelectedProperty(null);
-    setMenuOpen(false);
-
-    setTimeout(() => {
-      document
-        .getElementById("immobili")
-        ?.scrollIntoView({
-          behavior: "smooth"
-        });
-    }, 100);
-  };
+  const [
+    selectedProperty,
+    setSelectedProperty
+  ] = useState(null);
 
 
   /* =======================================================
@@ -862,17 +985,22 @@ export default function App() {
 
   if (selectedProperty) {
 
-    const property = properties[selectedProperty];
+    const property =
+      properties[selectedProperty];
 
-    return (
-      <PropertyPage
-        property={property}
-        menuOpen={menuOpen}
-        setMenuOpen={setMenuOpen}
-        onHome={goHome}
-        onBack={goBackToProperties}
-      />
-    );
+    if (property) {
+      return (
+        <PropertyPage
+          property={property}
+          setSelectedProperty={
+            setSelectedProperty
+          }
+          menuOpen={menuOpen}
+          setMenuOpen={setMenuOpen}
+        />
+      );
+    }
+
   }
 
 
@@ -884,14 +1012,18 @@ export default function App() {
     <div id="home">
 
       {/* NAVBAR */}
+
       <Navbar
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
-        onHome={goHome}
+        setSelectedProperty={
+          setSelectedProperty
+        }
       />
 
 
       {/* HERO */}
+
       <header
         className="hero"
         style={{
@@ -901,7 +1033,8 @@ export default function App() {
           placeItems: "center",
           color: "#fff",
           textAlign: "center",
-          backgroundImage: "url('/hero.jpg')",
+          backgroundImage:
+            "url('/hero.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat"
@@ -912,7 +1045,9 @@ export default function App() {
 
         <div
           className="hero-inner"
-          style={{ padding: "0 16px" }}
+          style={{
+            padding: "0 16px"
+          }}
         >
 
           <p className="hero-sub">
@@ -921,6 +1056,7 @@ export default function App() {
 
 
           {/* SEARCH BAR */}
+
           <div className="search">
 
             <select
@@ -941,6 +1077,7 @@ export default function App() {
               className="search-select"
               defaultValue="tutte"
             >
+
               <option value="tutte">
                 Tutte le tipologie
               </option>
@@ -964,6 +1101,7 @@ export default function App() {
               <option value="monolocale">
                 Monolocale
               </option>
+
             </select>
 
 
@@ -974,7 +1112,9 @@ export default function App() {
             />
 
 
-            <button className="search-button">
+            <button
+              className="search-button"
+            >
               Cerca
             </button>
 
@@ -986,6 +1126,7 @@ export default function App() {
 
 
       {/* IMMOBILI */}
+
       <main
         id="immobili"
         className="main"
@@ -995,88 +1136,89 @@ export default function App() {
 
           <div className="cards-grid">
 
-            {featured.map((casa, index) => (
+            {featured.map(
+              (casa, index) => (
 
-              <article
-                key={index}
-                className="card"
-                onClick={() => {
+                <article
+                  key={index}
+                  className="card"
+                  onClick={() => {
 
-                  if (casa.property) {
+                    if (casa.property) {
 
-                    setSelectedProperty(casa.property);
-                    setMenuOpen(false);
+                      setSelectedProperty(
+                        casa.property
+                      );
 
-                    window.scrollTo({
-                      top: 0,
-                      behavior: "smooth"
-                    });
+                      window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                      });
 
-                  }
+                    }
 
-                }}
-                style={{
-                  cursor: casa.property
-                    ? "pointer"
-                    : "default"
-                }}
-              >
-
-                <div
-                  className="card-media"
+                  }}
                   style={{
-                    aspectRatio: "16/9",
-                    background: "#f3f4f6"
+                    cursor:
+                      casa.property
+                        ? "pointer"
+                        : "default"
                   }}
                 >
 
-                  <img
-                    src={`/${encodeURI(casa.img)}`}
-                    alt={casa.titolo}
+                  <div
+                    className="card-media"
                     style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover"
-                    }}
-                  />
-
-                </div>
-
-
-                <div style={{ padding: 14 }}>
-
-                  <h3
-                    style={{
-                      margin: "0 0 6px",
-                      fontSize: 18
+                      aspectRatio: "16/9",
+                      background: "#f3f4f6"
                     }}
                   >
-                    {casa.titolo}
-                  </h3>
 
-
-                  <p className="card-badge">
-                    {casa.info}
-                  </p>
-
-
-                  {casa.property && (
-                    <p
+                    <img
+                      src={`/${encodeURI(
+                        casa.img
+                      )}`}
+                      alt={casa.titolo}
                       style={{
-                        margin: "10px 0 0",
-                        fontSize: "14px",
-                        fontWeight: 600
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover"
+                      }}
+                    />
+
+                  </div>
+
+
+                  <div
+                    style={{
+                      padding: "18px"
+                    }}
+                  >
+
+                    <h3
+                      style={{
+                        margin:
+                          "0 0 8px"
                       }}
                     >
-                      Scopri la proprietà →
+                      {casa.titolo}
+                    </h3>
+
+                    <p
+                      style={{
+                        margin: 0,
+                        color: "#666"
+                      }}
+                    >
+                      {casa.info}
                     </p>
-                  )}
 
-                </div>
+                  </div>
 
-              </article>
+                </article>
 
-            ))}
+              )
+            )}
 
           </div>
 
@@ -1086,18 +1228,21 @@ export default function App() {
 
 
       {/* SERVIZI */}
+
       <section
         id="servizi"
         className="container"
         style={{
-          padding: "40px 16px 8px"
+          padding:
+            "40px 16px 8px"
         }}
       >
 
         <h2
           style={{
             textAlign: "center",
-            margin: "0 0 20px"
+            margin:
+              "0 0 20px"
           }}
         >
           Servizi
@@ -1106,70 +1251,128 @@ export default function App() {
 
         <div
           className="cards-grid"
-          style={{ gap: 16 }}
+          style={{
+            gap: 16
+          }}
         >
 
           <article className="card">
-            <div style={{ padding: 18 }}>
 
-              <h3 style={{ marginTop: 0 }}>
+            <div
+              style={{
+                padding: 18
+              }}
+            >
+
+              <h3
+                style={{
+                  marginTop: 0
+                }}
+              >
                 Valutazioni e Analisi
               </h3>
 
-              <p style={{ marginBottom: 0 }}>
-                Stima realistica dell'immobile con dati
-                di mercato aggiornati.
+              <p
+                style={{
+                  marginBottom: 0
+                }}
+              >
+                Stima realistica dell'immobile
+                con dati di mercato aggiornati.
               </p>
 
             </div>
+
           </article>
 
 
           <article className="card">
-            <div style={{ padding: 18 }}>
 
-              <h3 style={{ marginTop: 0 }}>
+            <div
+              style={{
+                padding: 18
+              }}
+            >
+
+              <h3
+                style={{
+                  marginTop: 0
+                }}
+              >
                 Marketing mirato
               </h3>
 
-              <p style={{ marginBottom: 0 }}>
-                Foto/video professionali, portali top
-                e promozione social.
+              <p
+                style={{
+                  marginBottom: 0
+                }}
+              >
+                Foto/video professionali,
+                portali top e promozione social.
               </p>
 
             </div>
+
           </article>
 
 
           <article className="card">
-            <div style={{ padding: 18 }}>
 
-              <h3 style={{ marginTop: 0 }}>
+            <div
+              style={{
+                padding: 18
+              }}
+            >
+
+              <h3
+                style={{
+                  marginTop: 0
+                }}
+              >
                 Gestione pratiche
               </h3>
 
-              <p style={{ marginBottom: 0 }}>
-                Dalla proposta al rogito: burocrazia,
-                scadenze e documenti.
+              <p
+                style={{
+                  marginBottom: 0
+                }}
+              >
+                Dalla proposta al rogito:
+                burocrazia, scadenze e documenti.
               </p>
 
             </div>
+
           </article>
 
 
           <article className="card">
-            <div style={{ padding: 18 }}>
 
-              <h3 style={{ marginTop: 0 }}>
+            <div
+              style={{
+                padding: 18
+              }}
+            >
+
+              <h3
+                style={{
+                  marginTop: 0
+                }}
+              >
                 Collaborazioni internazionali
               </h3>
 
-              <p style={{ marginBottom: 0 }}>
-                Visibilità all'estero grazie a
-                partnership globali.
+              <p
+                style={{
+                  marginBottom: 0
+                }}
+              >
+                Visibilità all'estero grazie
+                a partnership globali.
               </p>
 
             </div>
+
           </article>
 
         </div>
@@ -1178,85 +1381,8 @@ export default function App() {
 
 
       {/* FOOTER */}
-      <footer id="contatti">
 
-        <div
-          style={{
-            backgroundColor: "#E5E5E0",
-            color: "#2D2D2D",
-            textAlign: "center",
-            padding: "40px 20px"
-          }}
-        >
-
-          <h3 style={{ marginTop: 0 }}>
-            My Home Immobiliare
-          </h3>
-
-          <p style={{ margin: "6px 0" }}>
-            Via XX Settembre 34,
-            San Benedetto del Tronto (AP)
-          </p>
-
-
-          <p style={{ margin: "6px 0" }}>
-
-            <a
-              href="mailto:info@myhomeimmobiliare.com"
-              style={{
-                color: "#000",
-                textDecoration: "none"
-              }}
-            >
-              info@myhomeimmobiliare.com
-            </a>
-
-          </p>
-
-
-          <p style={{ margin: "6px 0" }}>
-
-            <a
-              href="tel:+390735367757"
-              style={{
-                color: "#000",
-                textDecoration: "none"
-              }}
-            >
-              0735 367757
-            </a>
-
-            {" • "}
-
-            <a
-              href="tel:+393487232091"
-              style={{
-                color: "#000",
-                textDecoration: "none"
-              }}
-            >
-              +39 348 723 2091
-            </a>
-
-          </p>
-
-        </div>
-
-
-        <div
-          style={{
-            backgroundColor: "#D6CEC2",
-            color: "#555",
-            textAlign: "center",
-            padding: "12px 20px",
-            fontSize: "14px"
-          }}
-        >
-          © {new Date().getFullYear()} My Home Immobiliare -
-          Tutti i diritti riservati
-        </div>
-
-      </footer>
+      <Footer />
 
     </div>
   );
