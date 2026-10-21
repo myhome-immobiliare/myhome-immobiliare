@@ -1222,6 +1222,100 @@ export default function App() {
 
             {/* SERVIZI */}
 
+
+      {/* CHI SONO */}
+      <section
+        id="chi-sono"
+        style={{
+          backgroundColor: "#F4F0E9",
+          padding: "60px 20px",
+          color: "#2D2D2D"
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1100px",
+            margin: "0 auto",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "40px",
+            flexWrap: "wrap"
+          }}
+        >
+          <div style={{ flex: "1 1 300px", maxWidth: "420px" }}>
+            <img
+              src="/Ritratto%20professionale%20con%20occhiali%20neri.png"
+              alt="Sandra Traini, agente immobiliare"
+              style={{
+                width: "100%",
+                maxHeight: "480px",
+                objectFit: "cover",
+                objectPosition: "center",
+                borderRadius: "12px",
+                display: "block"
+              }}
+            />
+          </div>
+
+          <div style={{ flex: "1 1 320px", maxWidth: "580px" }}>
+            <p
+              style={{
+                color: "#96744F",
+                textTransform: "uppercase",
+                letterSpacing: "2px",
+                fontSize: "13px",
+                fontWeight: 600,
+                marginBottom: "12px"
+              }}
+            >
+              My Home Real Estate
+            </p>
+
+            <h2 style={{ fontSize: "32px", margin: "0 0 8px" }}>
+              Sono Sandra Traini
+            </h2>
+
+            <h3
+              style={{
+                fontSize: "19px",
+                fontWeight: 500,
+                margin: "0 0 24px",
+                color: "#80694F"
+              }}
+            >
+              Agente immobiliare da circa 20 anni
+            </h3>
+
+            <p style={{ lineHeight: 1.8, marginBottom: "16px" }}>
+              Accompagno i miei clienti nella vendita e nell’acquisto di un
+              immobile con attenzione, trasparenza e dedizione, perché so
+              quanto sia importante prendere decisioni così significative
+              con serenità e consapevolezza.
+            </p>
+
+            <p style={{ lineHeight: 1.8, marginBottom: "20px" }}>
+              Mi impegno a valorizzare ogni proprietà attraverso una
+              presentazione curata, strategie di marketing mirate e la
+              ricerca delle opportunità più adatte, seguendo ogni cliente
+              con un servizio personalizzato, dalla prima consulenza fino
+              al rogito.
+            </p>
+
+            <p
+              style={{
+                fontWeight: 600,
+                fontSize: "16px",
+                color: "#80694F",
+                marginBottom: 0
+              }}
+            >
+              My Home Real Estate: ogni casa una storia, la tua!
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section
         id="servizi"
         className="container"
