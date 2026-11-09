@@ -1459,7 +1459,7 @@ export default function App() {
         >
           <div style={{ flex: "1 1 300px", maxWidth: "420px" }}>
             <img
-            src="/Ritratto%20professionale%20con%20sorriso%20caldo.png"
+            src="/sandra.jpeg"
               alt="Sandra Traini, agente immobiliare"
               style={{
                 width: "100%",
